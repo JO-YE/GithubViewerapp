@@ -33,6 +33,8 @@ form.addEventListener("submit", async (event) => {
 
   // TODO: remove scroll event listener
 
+  window.removeEventListener("scroll", () => {});
+
   const username = document.getElementById("username-input").value.trim();
 
   if (username === "") {
