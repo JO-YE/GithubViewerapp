@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  background-image: url(./githubicon.webp);
+  background-repeat: no-repeat;
+  background-position: 0px, 50%;
+  display: block;
+}
+
+.container {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.container h2 {
+  margin-top: 0;
+}
+
+#github-form {
+  display: flex;
+  gap: 10px;
+}
+
+#username-input {
+  flex: 1;
+  padding: 5px;
+}
+
+button[type="submit"] {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+}
+button:hover{ /*the mouse hovering over it. */ 
+	opacity: 0.9;
+}
+
+#user-info,
+#repositories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.repository {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
