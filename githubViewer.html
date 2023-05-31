@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHubViewerApp</title>
-  <link rel='icon' href='gicon.jpg'>
-  <link rel="stylesheet" href="github_styles.css">
-</head>
-<body>
-  <header>
-    <h1>GitHub Viewer</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHubViewerApp</title>
+    <link rel="icon" href="gicon.jpg" />
+    <link rel="stylesheet" href="github_styles.css" />
 
-  <main>
-    <div class="container">
-      <h2>Enter GitHub Username</h2>
-      <form id="github-form">
-        <input type="text" id="username-input" placeholder="Enter GitHub username">
-        <button type="submit">Get User</button>
-      </form>
-    </div>
+    <script src="app.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <h1>GitHub Viewer</h1>
+    </header>
 
-    <div class="container">
-      <h2>User Information</h2>
-      <div id="user-info"></div>
-    </div>
+    <main>
+      <div class="container">
+        <h2>Enter GitHub Username</h2>
+        <form id="github-form">
+          <input
+            type="text"
+            id="username-input"
+            placeholder="Enter GitHub username"
+          />
+          <button type="submit">Get User</button>
+        </form>
+      </div>
 
-    <div class="container">
-      <h2>Repositories</h2>
-      <div id="repositories"></div>
-    </div>
-  </main>
+      <div class="github-users"></div>
 
-  <script src="githubV.js" type="module"></script>
-  <!-- move this up --> 
-</body>
+      <div class="container">
+        <h2>User Information</h2>
+        <div id="user-info"></div>
+      </div>
+
+      <div class="container">
+        <h2>Repositories</h2>
+        <div id="repositories"></div>
+      </div>
+    </main>
+
+    <!--<script src="app.js" type="module"></script> -->
+  </body>
 </html>
