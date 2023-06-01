@@ -1,20 +1,24 @@
 const API = "https://api.github.com/users";
-let page = 1;
-let perPage = 30;
+let page = 1; // Assuming page and perPage variables are defined elsewhere
+let perPage = 50;
 let users = [];
 
 export const fetchUsers = async () => {
   try {
+    const randomPage = Math.floor(Math.random() * 10) + 1; // Generate a random page number
+
     const response = await fetch(
-      `${API}?since=${(page - 1) * perPage}&per_page=${perPage}`
+      `${API}?since=${(randomPage - 1) * perPage}&per_page=${perPage}`
     );
-    // the await keyword is used to pause the execute until the fetch request resolves and returns a response.
+
     if (!response.ok) {
       throw new Error("User not found");
     }
+
     const data = await response.json();
-    users = [...users, ...data];
-    page++;
+    users = data; // Assuming users variable is defined elsewhere
+    page++; // Increment the page number for the next fetch
+
     return users;
   } catch (error) {
     console.error("Error:", error);

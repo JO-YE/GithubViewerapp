@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#5333ED">
+
+<!--
+<pre>
+                                                ..                   ▄■▀▀▀▀■
+ ▄██████▄                                   –▀▀▀▀▀ ▀▀––            .▀        ▀
+█▀  ▀████ ░  ████ ███▄ ░███▄ █████▄   ▄█████████▄▄███████████▄ ▄██████▄ ▄██▄ ░
+█    ████ ░ ████ ░████ ░█████ ░████ ░████▀▀▀▀██▀ ░  ████ ░   ████▀     ▀████ ░
+ ▀   █▓▓█ ░█▓▓█ ░ █▓▓█ ░█▓▓█ ░ █▓▓█ ░▓▓█▀ ░   ▀     █▓▓█ ░  █▓▓█ ░      █▓▓█ ░
+ . ┌─█▓▓█ █▓▓█ ░──█▒▒█─░█▒▒█─░─█▒▒█─░▀▒▒▒▒▒▒▒█▄──░──█▒▒█─░─█▒▒█ ░ ──────█▒▒█ ░
+   : █░░█ ░█░░█ ░ █░░█ ░█░░█ ░ █░░█ ░  ▀░░░░░░░█ ░  █░░█ ░ █░░█ ░       █░░█ ░
+   . █..█ ░ █..█ ░█..█ ░█..█ ░ █..█ ░     .  █..█ ░ █..█ ░  █..█ ░      █..█ ░
+   | █  █ ░  █  █ █  █ ░█  █ ░ █  █ ░  ▄▀     █  █ ░█  █▄ ░  █  █▄    ▄██  █ ░
+   └ ▀███ ░───████████ ░███▀ ░─████ ░ ██──────████ ░▀███▓▀ ░  ▀██████▀ ▀██▀ ░
+      ░░░░░      ▀███▀  ░░░░░░ ████ ░ ███▄  ▄████ ░   ░░░░      ░░░░░░   ░░
+           ▄                   ▀███ ░  ▀███████▀          .
+   ┌──────▀▀▀▀ ▀▀─────────────── ██ ──────────────────────▀▀▄▄▄  ▄▄▄──────┐
+   : ░                            ▀█▄    ▄                      ▀▀       ░ :
+   |                                ▀––▀                                   |
+   |        We're building a world-class hosting platform at Kinsta.       |
+   |                                                                       |
+   |        🌎 Remote             🧕 Diverse             💪 Kick-ass      |
+   |                                                                       |
+   |                                                                       |
+   |        https://kinsta.com/careers/                     Join us!       |
+   |                                                                       |
+   |                                                                       |
+   | ░                                                                   ░ |
+   └───────▀▀▀▀ ▀▀───────────────────────────────────────────▀▀ ▀▀─────────┘
+</pre>
+-->
+
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v17.1.2 (Yoast SEO v17.1) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Ready, Set, Launch: Creating a Static Site With GitHub Pages</title>
+	<meta name="description" content="Static sites are the perfect way to quickly build an online presence. GitHub Pages gives you a free and simple way to deploy your static site." />
+	<link rel="canonical" href="https://kinsta.com/blog/github-pages/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Ready, Set, Launch: Creating a Static Site With GitHub Pages" />
+	<meta property="og:description" content="Static sites are the perfect way to quickly build an online presence. GitHub Pages gives you a free and simple way to deploy your static site." />
+	<meta property="og:url" content="https://kinsta.com/blog/github-pages/" />
+	<meta property="og:site_name" content="Kinsta®" />
+	<meta property="article:publisher" content="https://www.facebook.com/kinstahosting" />
+	<meta property="article:published_time" content="2023-02-22T19:00:15+00:00" />
+	<meta property="article:modified_time" content="2023-02-22T14:35:58+00:00" />
+	<meta property="og:image" content="https://kinsta.com/wp-content/uploads/2023/02/github-pages.jpg" />
+	<meta property="og:image:width" content="1460" />
+	<meta property="og:image:height" content="730" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:description" content="Static sites are the perfect way to quickly build an online presence. GitHub Pages gives you a free and simple way to deploy your static site." />
+	<meta name="twitter:image" content="https://kinsta.com/wp-content/uploads/2023/02/github-pages.jpg" />
+	<meta name="twitter:creator" content="@DaniDiazTech" />
+	<meta name="twitter:site" content="@kinsta" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Daniel Diaz" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="16 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://kinsta.com/#organization","name":"Kinsta","url":"https://kinsta.com/","sameAs":["https://www.facebook.com/kinstahosting","https://www.instagram.com/kinstahosting/","https://www.linkedin.com/company/kinsta/","https://www.youtube.com/c/Kinsta","https://www.pinterest.com/kinstahosting/","https://twitter.com/kinsta"],"logo":{"@type":"ImageObject","@id":"https://kinsta.com/#logo","inLanguage":"en-US","url":"https://kinsta.com/wp-content/uploads/2020/12/kinsta-logo.jpg","contentUrl":"https://kinsta.com/wp-content/uploads/2020/12/kinsta-logo.jpg","width":600,"height":60,"caption":"Kinsta"},"image":{"@id":"https://kinsta.com/#logo"}},{"@type":"WebSite","@id":"https://kinsta.com/#website","url":"https://kinsta.com/","name":"Kinsta\u00ae","description":"Fast, secure, premium hosting solutions","publisher":{"@id":"https://kinsta.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kinsta.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://kinsta.com/blog/github-pages/#primaryimage","inLanguage":"en-US","url":"https://kinsta.com/wp-content/uploads/2023/02/github-pages.jpg","contentUrl":"https://kinsta.com/wp-content/uploads/2023/02/github-pages.jpg","width":1460,"height":730,"caption":"GitHub Pages"},{"@type":"WebPage","@id":"https://kinsta.com/blog/github-pages/#webpage","url":"https://kinsta.com/blog/github-pages/","name":"Ready, Set, Launch: Creating a Static Site With GitHub Pages","isPartOf":{"@id":"https://kinsta.com/#website"},"primaryImageOfPage":{"@id":"https://kinsta.com/blog/github-pages/#primaryimage"},"datePublished":"2023-02-22T19:00:15+00:00","dateModified":"2023-02-22T14:35:58+00:00","description":"Static sites are the perfect way to quickly build an online presence. GitHub Pages gives you a free and simple way to deploy your static site.","breadcrumb":{"@id":"https://kinsta.com/blog/github-pages/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://kinsta.com/blog/github-pages/"]}]},{"@type":"BreadcrumbList","@id":"https://kinsta.com/blog/github-pages/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kinsta.com/"},{"@type":"ListItem","position":2,"name":"Resource Center","item":"https://kinsta.com/resources/"},{"@type":"ListItem","position":3,"name":"Blog","item":"https://kinsta.com/blog/"},{"@type":"ListItem","position":4,"name":"Web Development Tools","item":"https://kinsta.com/topic/web-development-tools/"},{"@type":"ListItem","position":5,"name":"Ready, Set, Launch: Creating a Static Site With GitHub Pages"}]},{"@type":"Article","@id":"https://kinsta.com/blog/github-pages/#article","isPartOf":{"@id":"https://kinsta.com/blog/github-pages/#webpage"},"author":{"@id":"https://kinsta.com/#/schema/person/38f3b6be2225ef58d7914f1b6a70fcb2"},"headline":"Ready, Set, Launch: Creating a Static Site With GitHub Pages","datePublished":"2023-02-22T19:00:15+00:00","dateModified":"2023-02-22T14:35:58+00:00","mainEntityOfPage":{"@id":"https://kinsta.com/blog/github-pages/#webpage"},"wordCount":2890,"commentCount":0,"publisher":{"@id":"https://kinsta.com/#organization"},"image":{"@id":"https://kinsta.com/blog/github-pages/#primaryimage"},"thumbnailUrl":"https://kinsta.com/wp-content/uploads/2023/02/github-pages.jpg","inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://kinsta.com/blog/github-pages/#respond"]}]},{"@type":"Person","@id":"https://kinsta.com/#/schema/person/38f3b6be2225ef58d7914f1b6a70fcb2","name":"Daniel Diaz","image":{"@type":"ImageObject","@id":"https://kinsta.com/#personlogo","inLanguage":"en-US","url":"https://kinsta.com/avatar/4541784060a3b28ffb67a5da67b1f7e7?s=96&d=mm&r=g","contentUrl":"https://kinsta.com/avatar/4541784060a3b28ffb67a5da67b1f7e7?s=96&d=mm&r=g","caption":"Daniel Diaz"},"description":"Daniel is a self-taught Python Developer, Technical Writer, and long-life learner. He enjoys creating software from scratch and explaining this process through stunning articles. Follow him on Twitter: @DaniDiazTech","sameAs":["https://developerroad.herokuapp.com/","https://www.linkedin.com/in/danidiaztech","https://twitter.com/DaniDiazTech"],"url":"https://kinsta.com/blog/author/danidiaztech/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="Kinsta® &raquo; Feed" href="https://kinsta.com/feed/" />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--purple: #5333ed;--wp--preset--color--blue: #150773;--wp--preset--color--dark-blue: #0e0a1b;--wp--preset--color--turquoise: #2cd4d9;--wp--preset--color--gray: #e1eaf8;--wp--preset--color--offwhite: #fafafa;--wp--preset--color--success: #30b00f;--wp--preset--color--error: #e43c3c;--wp--preset--color--primary: var(--color-primary);--wp--preset--color--secondary: var(--color-secondary);--wp--preset--color--tertiary: var(--color-tertiary);--wp--preset--color--background: var(--color-background);--wp--preset--color--editor-highlight: red;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--hero: linear-gradient( -30deg, rgb(0,0,77) 0%, rgb(83,51,237) 49%, rgb(44,212,217) 100%);--wp--preset--gradient--dark-purple: linear-gradient(94.56deg, #2C1B67 30.9%, #190C47 72.6%, #0C022F 86.84%);--wp--preset--gradient--multi-service: radial-gradient(circle at 80% 100%, #2cd4d9 0%, transparent 50%), radial-gradient(circle at 20% 100%, #ee7a0f 0%, transparent 50%), radial-gradient(circle at 50% 0%, #d824c5 0%, transparent 50%), linear-gradient(#0E0A1B, #0E0A1B);--wp--preset--gradient--wp: radial-gradient(circle at 80% 100%, #2cd4d9 0%, #0E0A1B 50%);--wp--preset--gradient--app: radial-gradient(circle at 80% 100%, #D824C5 0%, #0E0A1B 50%);--wp--preset--gradient--db: radial-gradient(circle at 80% 100%, #1F904C 0%, #0E0A1B 50%);--wp--preset--gradient--wp-light: radial-gradient(circle at 80% 100%, #2cd4d9 0%, #f3f3f6 50%);--wp--preset--gradient--app-light: radial-gradient(circle at 80% 100%, #D824C5 0%, #f3f3f6 50%);--wp--preset--gradient--db-light: radial-gradient(circle at 80% 100%, #1F904C 0%, #f3f3f6 50%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 1rem;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 1.5rem;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--smallest: 0.75rem;--wp--preset--font-size--smaller: 0.875rem;--wp--preset--font-size--normal: 1.125rem;--wp--preset--font-size--larger: 2.125rem;--wp--preset--font-size--largest: 3.5rem;--wp--preset--font-family--body: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;--wp--preset--font-family--heading: 'Brandon Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;--wp--preset--spacing--20: 1rem;--wp--preset--spacing--30: 2rem;--wp--preset--spacing--40: 4.25rem;--wp--preset--spacing--50: 8.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--spacing--10: 0.5rem;}body { margin: 0;--wp--style--global--content-size: 41rem;--wp--style--global--wide-size: 71rem; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-purple-color{color: var(--wp--preset--color--purple) !important;}.has-blue-color{color: var(--wp--preset--color--blue) !important;}.has-dark-blue-color{color: var(--wp--preset--color--dark-blue) !important;}.has-turquoise-color{color: var(--wp--preset--color--turquoise) !important;}.has-gray-color{color: var(--wp--preset--color--gray) !important;}.has-offwhite-color{color: var(--wp--preset--color--offwhite) !important;}.has-success-color{color: var(--wp--preset--color--success) !important;}.has-error-color{color: var(--wp--preset--color--error) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-tertiary-color{color: var(--wp--preset--color--tertiary) !important;}.has-background-color{color: var(--wp--preset--color--background) !important;}.has-editor-highlight-color{color: var(--wp--preset--color--editor-highlight) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-purple-background-color{background-color: var(--wp--preset--color--purple) !important;}.has-blue-background-color{background-color: var(--wp--preset--color--blue) !important;}.has-dark-blue-background-color{background-color: var(--wp--preset--color--dark-blue) !important;}.has-turquoise-background-color{background-color: var(--wp--preset--color--turquoise) !important;}.has-gray-background-color{background-color: var(--wp--preset--color--gray) !important;}.has-offwhite-background-color{background-color: var(--wp--preset--color--offwhite) !important;}.has-success-background-color{background-color: var(--wp--preset--color--success) !important;}.has-error-background-color{background-color: var(--wp--preset--color--error) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-tertiary-background-color{background-color: var(--wp--preset--color--tertiary) !important;}.has-background-background-color{background-color: var(--wp--preset--color--background) !important;}.has-editor-highlight-background-color{background-color: var(--wp--preset--color--editor-highlight) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-purple-border-color{border-color: var(--wp--preset--color--purple) !important;}.has-blue-border-color{border-color: var(--wp--preset--color--blue) !important;}.has-dark-blue-border-color{border-color: var(--wp--preset--color--dark-blue) !important;}.has-turquoise-border-color{border-color: var(--wp--preset--color--turquoise) !important;}.has-gray-border-color{border-color: var(--wp--preset--color--gray) !important;}.has-offwhite-border-color{border-color: var(--wp--preset--color--offwhite) !important;}.has-success-border-color{border-color: var(--wp--preset--color--success) !important;}.has-error-border-color{border-color: var(--wp--preset--color--error) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-tertiary-border-color{border-color: var(--wp--preset--color--tertiary) !important;}.has-background-border-color{border-color: var(--wp--preset--color--background) !important;}.has-editor-highlight-border-color{border-color: var(--wp--preset--color--editor-highlight) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-hero-gradient-background{background: var(--wp--preset--gradient--hero) !important;}.has-dark-purple-gradient-background{background: var(--wp--preset--gradient--dark-purple) !important;}.has-multi-service-gradient-background{background: var(--wp--preset--gradient--multi-service) !important;}.has-wp-gradient-background{background: var(--wp--preset--gradient--wp) !important;}.has-app-gradient-background{background: var(--wp--preset--gradient--app) !important;}.has-db-gradient-background{background: var(--wp--preset--gradient--db) !important;}.has-wp-light-gradient-background{background: var(--wp--preset--gradient--wp-light) !important;}.has-app-light-gradient-background{background: var(--wp--preset--gradient--app-light) !important;}.has-db-light-gradient-background{background: var(--wp--preset--gradient--db-light) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-smallest-font-size{font-size: var(--wp--preset--font-size--smallest) !important;}.has-smaller-font-size{font-size: var(--wp--preset--font-size--smaller) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-larger-font-size{font-size: var(--wp--preset--font-size--larger) !important;}.has-largest-font-size{font-size: var(--wp--preset--font-size--largest) !important;}.has-body-font-family{font-family: var(--wp--preset--font-family--body) !important;}.has-heading-font-family{font-family: var(--wp--preset--font-family--heading) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='kinsta-css-style-css' href='https://kinsta.com/wp-content/themes/kinsta/dist/style.css?ver=95da760c8b2d662c1f00' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://kinsta.com/wp-json/" /><link rel="alternate" type="application/json" href="https://kinsta.com/wp-json/wp/v2/posts/145802" /><link rel='shortlink' href='https://kinsta.com/?p=145802' />
+<link rel="alternate" type="application/json+oembed" href="https://kinsta.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkinsta.com%2Fblog%2Fgithub-pages%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://kinsta.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkinsta.com%2Fblog%2Fgithub-pages%2F&#038;format=xml" />
+
+<link rel="alternate" href="https://kinsta.com/blog/github-pages/" hreflang="x-default" />
+<link rel="alternate" href="https://kinsta.com/blog/github-pages/" hreflang="en" />
+<link rel="alternate" href="https://kinsta.com/it/blog/github-pages/" hreflang="it" />
+<link rel="alternate" href="https://kinsta.com/fr/blog/pages-github/" hreflang="fr" />
+<link rel="alternate" href="https://kinsta.com/de/blog/github-pages/" hreflang="de" />
+<link rel="alternate" href="https://kinsta.com/nl/blog/github-pages/" hreflang="nl" />
+<link rel="alternate" href="https://kinsta.com/es/blog/github-pages/" hreflang="es" />
+<link rel="alternate" href="https://kinsta.com/se/blog/github-pages/" hreflang="sv" />
+<link rel="alternate" href="https://kinsta.com/dk/blog/github-pages/" hreflang="da" />
+<script>window.$kinsta = {"env":"production","maintenanceMode":false,"siteURL":"https:\/\/kinsta.com\/","siteCode":"en","languageCode":"en","restBaseURL":"https:\/\/kinsta.com\/wp-json\/","adminAjaxURL":"https:\/\/kinsta.com\/wp-admin\/admin-ajax.php","themeDirURL":"https:\/\/kinsta.com\/wp-content\/themes\/kinsta\/","uploadDirBaseURL":"https:\/\/kinsta.com\/wp-content\/uploads\/","postURL":{"\/legal\/privacy-policy":"https:\/\/kinsta.com\/legal\/privacy-policy\/","\/legal\/terms-service":"https:\/\/kinsta.com\/legal\/terms-service\/","\/pricing":"https:\/\/kinsta.com\/pricing\/","\/signup":"https:\/\/kinsta.com\/signup\/","\/contact-us":"https:\/\/kinsta.com\/contact-us\/","\/pricing-calculator":"https:\/\/kinsta.com\/pricing-calculator\/","\/wordpress-hosting\/pricing":"https:\/\/kinsta.com\/wordpress-hosting\/pricing\/","\/application-hosting\/pricing":"https:\/\/kinsta.com\/application-hosting\/pricing\/","\/database-hosting\/pricing":"https:\/\/kinsta.com\/database-hosting\/pricing\/"},"stripe":{"publicKey":"pk_live_r16EiSaRITiPDMKQjLeoOviT"},"isSingular":true,"wpPost":{"id":145802,"title":"Ready, Set, Launch: Creating a Static Site With GitHub Pages","type":"post"}}</script>
+            <script type="application/ld+json" id="wl-jsonld">[{"@context":"http:\/\/schema.org","@id":"http:\/\/data.wordlift.io\/wl0150038\/post\/create-a-static-site-with-github-pages-145802","@type":"Article","description":"With all the current hot web development tools and frameworks, creating a website is getting increasingly complicated. But sometimes, you don't need a lot of interactivity on your site. If you're focused on getting the info to the viewer and don't need complex functionality, a static site might be the right choice. In this tutorial,...","mainEntityOfPage":"https:\/\/kinsta.com\/blog\/github-pages\/","image":[{"@type":"ImageObject","url":"https:\/\/kinsta.com\/wp-content\/uploads\/2023\/02\/github-pages-1200x675.jpg","width":1200,"height":675},{"@type":"ImageObject","url":"https:\/\/kinsta.com\/wp-content\/uploads\/2023\/02\/github-pages.jpg","width":1460,"height":730}],"headline":"Ready, Set, Launch: Creating a Static Site With GitHub Pages","url":"https:\/\/kinsta.com\/blog\/github-pages\/","datePublished":"2023-02-22T20:00:15+01:00","dateModified":"2023-02-22T15:35:58+01:00","wordCount":3335,"commentCount":"0","inLanguage":"en-US","publisher":{"@type":"Organization","@id":"http:\/\/data.wordlift.io\/wl0150038\/entity\/kinsta","name":"Kinsta","sameAs":["https:\/\/www.google.com\/maps?cid=2028540986187945162","https:\/\/opencorporates.com\/companies\/us_de\/7460224.rdf","https:\/\/opencorporates.com\/companies\/gb\/09030972.rdf","https:\/\/g.co\/kg\/g\/11h_cs1m3s","https:\/\/www.linkedin.com\/company\/kinsta\/","https:\/\/profiles.wordpress.org\/kinstahosting\/","https:\/\/www.facebook.com\/kinstahosting","https:\/\/twitter.com\/kinsta","https:\/\/www.instagram.com\/kinstahosting\/","https:\/\/www.youtube.com\/kinsta"],"logo":{"@type":"ImageObject","url":"https:\/\/kinsta.com\/wp-content\/uploads\/2020\/12\/kinsta-logo--publisher-logo.jpg","width":600,"height":60}},"author":{"@type":"Person","@id":"http:\/\/data.wordlift.io\/wl0150038\/author\/danidiaztech","name":"Daniel Diaz","givenName":"Daniel","familyName":"Diaz","url":"https:\/\/kinsta.com\/blog\/author\/danidiaztech\/"},"mentions":[{"@id":"http:\/\/data.wordlift.io\/wl0150038\/term\/topic\/web_development_tools"}]},{"@context":"http:\/\/schema.org","name":"Web Development Tools","@type":["Thing"],"@id":"http:\/\/data.wordlift.io\/wl0150038\/term\/topic\/web_development_tools","description":"","mainEntityOfPage":"https:\/\/kinsta.com\/topic\/web-development-tools\/"}]</script><link rel="preload" href="https://kinsta.com/wp-content/themes/kinsta/fonts/BrandonText-light.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://kinsta.com/wp-content/themes/kinsta/fonts/BrandonText-Black.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://kinsta.com/wp-content/themes/kinsta/fonts/BrandonText-Medium.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://kinsta.com/wp-content/themes/kinsta/fonts/roboto/Roboto-300.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://kinsta.com/wp-content/themes/kinsta/fonts/roboto/Roboto-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://kinsta.com/wp-content/themes/kinsta/fonts/roboto/Roboto-500.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://kinsta.com/wp-content/themes/kinsta/fonts/roboto/Roboto-700.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="https://kinsta.com/wp-content/uploads/2023/03/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://kinsta.com/wp-content/uploads/2023/03/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://kinsta.com/wp-content/uploads/2023/03/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://kinsta.com/wp-content/uploads/2023/03/cropped-favicon-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			li code,
+p code,
+.wp-block-code,
+.wp-block-kinsta-notice,
+.wp-block-kinsta-table-of-contents,
+.share-static
+{
+	background-color: #f3f3f6;
+}
+
+.related-posts {
+	background-color: #fafafa;
+}
+
+li code,
+p code {
+	border-color: #f3f3f6;
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-145802 single-format-standard wp-embed-responsive object-145802">
+
+<a class="skip-to-content" href="#main">
+  Skip to content</a>
+
+<div  id="kinsta-global-banner" class="kinsta-global-banner kinsta-global-banner--link is-theme-default" data-hash="2528cd87f2575f99ffe2c15de5ebdc75" data-event-label="deploy-your-app-">
+            <p>
+            <a  href="https://kinsta.com/application-hosting/pricing/hobby-tier/">
+                Deploy your app quickly and scale as you grow with our Hobby Tier            </a>
+        </p>
+    </div>
+<script  type="text/javascript" src="https://kinsta.com/wp-content/themes/kinsta/dist/early-load.js?ver=52f457ab65bb9cf8978c"></script>
+
+<header id="nav" class="site-menu site-menu--theme-default">
+    <div class="site-menu__inner">
+        <a href="https://kinsta.com/" class="site-menu__logo" rel="home">
+            <svg  class="icon icon--logo" aria-hidden="true" focusable="false" title="Kinsta®"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#logo" /></svg><span class="screen-reader-text">Kinsta®</span>        </a>
+
+        <a  href="#nav" id="nav-toggle" class="site-menu__nav__toggle" aria-label="Hamburger menu" aria-haspopup="true" aria-expanded="false">
+            Navigation        </a>
+
+        <nav class="site-menu__nav" aria-label="Main menu">
+    <div class="megamenu">
+    <div
+        id="megamenu__level-2__inner__backgroundFx-primary"
+        class="megamenu__level-2__inner__backgroundFx megamenu__level-2__inner__backgroundFx--primary"
+        style="width: 0px;left: 180px;"
+    >
+        <div class="megamenu__level-2__inner__backgroundFx-child"></div>
+    </div>
+    <ul class="megamenu__level-1">
+                                <li class="megamenu__level-1__li megamenu__level-1__li--has-children megamenu__level-1__li--no-third-level">
+                                <a
+                     id="megamenu-item-1" tabindex="0" href="#megamenu-item-1__child" class="megamenu__level-1__item megamenu__level-1__item--has-children js-megamenu-toggle-button"                    onmouseenter="backgroundAnimate(event, 'megamenu__level-2__inner__backgroundFx-primary', 1)"
+                >
+                    <span class="megamenu__level-1__item__title">
+                        Applications                    </span>
+                </a>
+                                    
+<div class="megamenu__level-2 megamenu__level-2--no-third-level" id="megamenu-item-1__child">
+    <div class="megamenu__level-2__mobile-label megamenu__level-3__item-title ml--30 mt--10">
+        Applications    </div>
+    <div class="megamenu__level-2__inner">
+        <ul class="megamenu__level-2__ul " onmouseleave='backgroundHide("megamenu__level-2__inner__backgroundFx-megamenu-item-1__child")'>
+            <div
+                id="megamenu__level-2__inner__backgroundFx-megamenu-item-1__child"
+                class="megamenu__level-2__inner__backgroundFx"
+            >
+                <div class="megamenu__level-2__inner__backgroundFx-child"></div>
+            </div>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-10" tabindex="0" href="https://kinsta.com/application-hosting/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-1__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-1__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Features                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Deploy apps in minutes                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-11" tabindex="0" href="https://kinsta.com/application-hosting/pricing/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-1__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-1__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Pricing                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Transparent, usage-based pricing                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-12" tabindex="0" href="https://kinsta.com/docs/application-hosting/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-1__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-1__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Docs                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Quick starts and feature guides                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                    </ul>
+
+            </div>
+</div>
+                            </li>
+                                <li class="megamenu__level-1__li megamenu__level-1__li--has-children megamenu__level-1__li--no-third-level">
+                                <a
+                     id="megamenu-item-2" tabindex="0" href="#megamenu-item-2__child" class="megamenu__level-1__item megamenu__level-1__item--has-children js-megamenu-toggle-button"                    onmouseenter="backgroundAnimate(event, 'megamenu__level-2__inner__backgroundFx-primary', 1)"
+                >
+                    <span class="megamenu__level-1__item__title">
+                        Databases                    </span>
+                </a>
+                                    
+<div class="megamenu__level-2 megamenu__level-2--no-third-level" id="megamenu-item-2__child">
+    <div class="megamenu__level-2__mobile-label megamenu__level-3__item-title ml--30 mt--10">
+        Databases    </div>
+    <div class="megamenu__level-2__inner">
+        <ul class="megamenu__level-2__ul " onmouseleave='backgroundHide("megamenu__level-2__inner__backgroundFx-megamenu-item-2__child")'>
+            <div
+                id="megamenu__level-2__inner__backgroundFx-megamenu-item-2__child"
+                class="megamenu__level-2__inner__backgroundFx"
+            >
+                <div class="megamenu__level-2__inner__backgroundFx-child"></div>
+            </div>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-13" tabindex="0" href="https://kinsta.com/database-hosting/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-2__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-2__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Features                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Set up in minutes                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-14" tabindex="0" href="https://kinsta.com/database-hosting/pricing/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-2__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-2__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Pricing                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Transparent, usage-based pricing                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-15" tabindex="0" href="https://kinsta.com/docs/database-hosting/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-2__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-2__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Docs                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Get started and feature guides                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                    </ul>
+
+            </div>
+</div>
+                            </li>
+                                <li class="megamenu__level-1__li megamenu__level-1__li--has-children megamenu__level-1__li--no-third-level">
+                                <a
+                     id="megamenu-item-3" tabindex="0" href="#megamenu-item-3__child" class="megamenu__level-1__item megamenu__level-1__item--has-children js-megamenu-toggle-button"                    onmouseenter="backgroundAnimate(event, 'megamenu__level-2__inner__backgroundFx-primary', 1)"
+                >
+                    <span class="megamenu__level-1__item__title">
+                        WordPress                    </span>
+                </a>
+                                    
+<div class="megamenu__level-2 megamenu__level-2--no-third-level megamenu__level-2--special-size" id="megamenu-item-3__child">
+    <div class="megamenu__level-2__mobile-label megamenu__level-3__item-title ml--30 mt--10">
+        WordPress    </div>
+    <div class="megamenu__level-2__inner">
+        <ul class="megamenu__level-2__ul " onmouseleave='backgroundHide("megamenu__level-2__inner__backgroundFx-megamenu-item-3__child")'>
+            <div
+                id="megamenu__level-2__inner__backgroundFx-megamenu-item-3__child"
+                class="megamenu__level-2__inner__backgroundFx"
+            >
+                <div class="megamenu__level-2__inner__backgroundFx-child"></div>
+            </div>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-16" tabindex="0" href="https://kinsta.com/wordpress-hosting/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-3__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-3__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Features                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Better, faster Managed WordPress Hosting                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-17" tabindex="0" href="https://kinsta.com/wordpress-hosting/pricing/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-3__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-3__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Pricing                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Backed by a 30-day money-back guarantee                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-18" tabindex="0" href="https://kinsta.com/docs/wordpress-hosting/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-3__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-3__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Docs                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Get started, migrations, and feature guides                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                    </ul>
+
+                    <div class="row width--100 row__break-column" style="padding: 16px;">
+                <div class="col-md-6 col-xs-12 pl--0 pr--0">
+                    <h4 class="megamenu__level-3__item-subtitle mt--6" tabindex="-1">
+                        Solutions                    </h4>
+                    <ul class="megamenu__level-3__section__items mt--10">
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/enterprise-wordpress-hosting/>
+                                Enterprise                            </a>
+                        </li>
+
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/wordpress-hosting-agencies/>
+                                Agency                            </a>
+                        </li>
+
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/woocommerce-hosting/>
+                                WooCommerce                            </a>
+                        </li>
+
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/small-business-hosting/>
+                                Small Businesses                            </a>
+                        </li>
+
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/web-hosting-for-nonprofits/>
+                                Non-Profit                            </a>
+                        </li>
+
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/single-site-plans/>
+                                Single Sites                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <h4 class="megamenu__level-3__item-subtitle mt--6" tabindex="-1">
+                        Benefits                    </h4>
+                    <ul class="megamenu__level-3__section__items mt--10">
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/wordpress-migration/>
+                                Free Migration                            </a>
+                        </li>
+
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/cloudflare-integration/>
+                                Cloudflare Integration                            </a>
+                        </li>
+
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/add-ons/>
+                                Add-Ons                            </a>
+                        </li>
+
+                        <li>
+                            <a class="megamenu__level-3__item" href=https://kinsta.com/devkinsta/>
+                                DevKinsta                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+</div>
+                            </li>
+                                <li class="megamenu__level-1__li megamenu__level-1__li--no-third-level">
+                                <a
+                     id="megamenu-link-19" tabindex="0" href="https://kinsta.com/docs/" class="megamenu__level-1__item"                    onmouseenter="backgroundAnimate(event, 'megamenu__level-2__inner__backgroundFx-primary', 1)"
+                >
+                    <span class="megamenu__level-1__item__title">
+                        Docs                    </span>
+                </a>
+                            </li>
+                                <li class="megamenu__level-1__li megamenu__level-1__li--no-third-level">
+                                <a
+                     id="megamenu-link-20" tabindex="0" href="https://kinsta.com/blog/" class="megamenu__level-1__item"                    onmouseenter="backgroundAnimate(event, 'megamenu__level-2__inner__backgroundFx-primary', 1)"
+                >
+                    <span class="megamenu__level-1__item__title">
+                        Blog                    </span>
+                </a>
+                            </li>
+                                <li class="megamenu__level-1__li megamenu__level-1__li--no-third-level">
+                                <a
+                     id="megamenu-link-21" tabindex="0" href="https://kinsta.com/pricing/" class="megamenu__level-1__item"                    onmouseenter="backgroundAnimate(event, 'megamenu__level-2__inner__backgroundFx-primary', 1)"
+                >
+                    <span class="megamenu__level-1__item__title">
+                        Pricing                    </span>
+                </a>
+                            </li>
+                                <li class="megamenu__level-1__li megamenu__level-1__li--has-children megamenu__level-1__li--no-third-level">
+                                <a
+                     id="megamenu-item-7" tabindex="0" href="#megamenu-item-7__child" class="megamenu__level-1__item megamenu__level-1__item--has-children js-megamenu-toggle-button"                    onmouseenter="backgroundAnimate(event, 'megamenu__level-2__inner__backgroundFx-primary', 1)"
+                >
+                    <span class="megamenu__level-1__item__title">
+                        Contact                    </span>
+                </a>
+                                    
+<div class="megamenu__level-2 megamenu__level-2--no-third-level megamenu__level-2--medium-size" id="megamenu-item-7__child">
+    <div class="megamenu__level-2__mobile-label megamenu__level-3__item-title ml--30 mt--10">
+        Contact    </div>
+    <div class="megamenu__level-2__inner">
+        <ul class="megamenu__level-2__ul width--100" onmouseleave='backgroundHide("megamenu__level-2__inner__backgroundFx-megamenu-item-7__child")'>
+            <div
+                id="megamenu__level-2__inner__backgroundFx-megamenu-item-7__child"
+                class="megamenu__level-2__inner__backgroundFx"
+            >
+                <div class="megamenu__level-2__inner__backgroundFx-child"></div>
+            </div>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-contact" tabindex="0" href="tel:+18886102915" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-7__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-7__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Talk to sales                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Call <b class="kinsta-tel " data-tel-apac="(+61) 1800 952 470" data-tel-emea="+44 808 2583 915">
+    +1 (888) 610-2915</b>
+ to find the best hosting for you.                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-22" tabindex="0" href="https://kinsta.com/schedule-demo/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-7__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-7__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Request a live demo                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Get a personalized demo of our powerful dashboard and hosting features.                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-23" tabindex="0" href="https://kinsta.com/contact-us/" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-7__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-7__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Ask questions                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Tell us about your website or project. We'll get back to you in one business day.                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                                            <li class="megamenu__level-2__li">
+                    <div class="megamenu__level-2__li__container">
+                        <a  id="megamenu-box-24" tabindex="0" href="https://my.kinsta.com/?lang=en" class="megamenu__level-2__item" onmouseenter="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-7__child&quot;)" onfocus="backgroundAnimate(event, &quot;megamenu__level-2__inner__backgroundFx-megamenu-item-7__child&quot;)">
+                            <span class="megamenu__level-2__item__title">
+                                Get help from our support team                            </span>
+                                                                                        <span class="megamenu__level-2__item__description">
+                                    Talk with our experts by launching a chat in the MyKinsta dashboard.                                </span>
+                                                    </a>
+                    </div>
+                </li>
+                    </ul>
+
+            </div>
+</div>
+                            </li>
+            </ul>
+</div>
+</nav>
+
+                    <div class="site-menu__search" id="search-form-container">
+                <form class="site-menu__search__form" method='get' action='https://kinsta.com'>
+                    <label>
+                        <span class="screen-reader-text">Search</span>
+                        <input name='s' type='text' required='required' value='' placeholder='Search all Kinsta resources' />                    </label>
+                    <button type="submit" class="site-menu__search__icon">
+                        <span class="screen-reader-text">Submit search</span>
+                        <svg  class="icon icon--search" aria-hidden="true" focusable="false"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#search" /></svg>                    </button>
+                </form>
+            </div>
+        
+                    <div class="site-menu__extras">
+                                                        <a  href="https://my.kinsta.com/login/?lang=en" class="site-menu__extras__item site-menu__hidden-small">
+                        Login                    </a>
+                                                        <a  href="https://kinsta.com/signup/?product_type=app-db" class="site-menu__extras__item button">
+                        Sign Up                    </a>
+                            </div>
+            </div>
+</header>
+
+<div class="site-menu-placeholder" id="site-menu-placeholder"></div>
+
+<main id="main">
+
+
+<article class="post-145802 post type-post status-publish format-standard has-post-thumbnail hentry topic-web-development-tools wl_entity_type-article">
+    
+<div class="article-title container container--narrow">
+            
+    <nav  class="breadcrumbs breadcrumbs--only-last" aria-label="Breadcrumbs">
+        <ol>
+                                            <li  class="breadcrumbs__li">
+                                            <a  href="https://kinsta.com/" class="breadcrumbs__link">
+                            Home                        </a>
+                                    </li>
+                                            <li  class="breadcrumbs__li">
+                                            <a  href="https://kinsta.com/resources/" class="breadcrumbs__link">
+                            Resource Center                        </a>
+                                    </li>
+                                            <li  class="breadcrumbs__li">
+                                            <a  href="https://kinsta.com/blog/" class="breadcrumbs__link">
+                            Blog                        </a>
+                                    </li>
+                                            <li  class="breadcrumbs__li is-parent">
+                                            <a  href="https://kinsta.com/topic/web-development-tools/" class="breadcrumbs__link">
+                            Web Development Tools                        </a>
+                                    </li>
+                                            <li  class="breadcrumbs__li is-current">
+                                            <span class="breadcrumbs__link" aria-current="true">
+                            Ready, Set, Launch: Creating a Static Site With GitHub Pages                        </span>
+                                    </li>
+                    </ol>
+    </nav>
+    
+            <h1 class="article-title__title">
+            Ready, Set, Launch: Creating a Static Site With GitHub Pages        </h1>
+    
+    
+            <div class="article-title__meta">
+                            <a href="https://kinsta.com/blog/author/danidiaztech/" title="Posts by Daniel Diaz" rel="author">Daniel Diaz</a>,
+                                        <time class="article-title__meta__date" datetime="2023-02-22T20:00:15+01:00">
+                    February 22, 2023                </time>
+                    </div>
+    
+    
+            <img width="1024" height="512" src="https://kinsta.com/wp-content/uploads/2023/02/github-pages-1024x512.jpg" class="article-title__featured-image wp-post-image" alt="GitHub Pages" decoding="async" loading="eager" srcset="https://kinsta.com/wp-content/uploads/2023/02/github-pages-1024x512.jpg 1024w, https://kinsta.com/wp-content/uploads/2023/02/github-pages-300x150.jpg 300w, https://kinsta.com/wp-content/uploads/2023/02/github-pages-768x384.jpg 768w, https://kinsta.com/wp-content/uploads/2023/02/github-pages-360x180.jpg 360w, https://kinsta.com/wp-content/uploads/2023/02/github-pages.jpg 1460w" sizes="(max-width: 1024px) 100vw, 1024px" />    </div>
+
+    <div class="container container--narrow">
+        
+<div class="share">
+            <h4 class="share__text">Share on</h4>
+        <style>body .novashare-buttons.novashare-floating .novashare-button-icon { width: 100%; }</style><div class='novashare-buttons novashare-floating novashare-no-print'><div class='novashare-buttons-wrapper'><a href='https://twitter.com/intent/tweet?text=Ready%2C%20Set%2C%20Launch%3A%20Creating%20a%20Static%20Site%20With%20GitHub%20Pages&url=https%3A%2F%2Fkinsta.com%2Fblog%2Fgithub-pages%2F&via=kinsta' aria-label='Twitter' target='_blank' class='novashare-button twitter' rel='nofollow noopener noreferrer'><span class='novashare-button-wrapper novashare-button-block'><span class='novashare-button-icon novashare-button-block'><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></span></span></a><a href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkinsta.com%2Fblog%2Fgithub-pages%2F' aria-label='Facebook' target='_blank' class='novashare-button facebook' rel='nofollow noopener noreferrer'><span class='novashare-button-wrapper novashare-button-block'><span class='novashare-button-icon novashare-button-block'><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></span></span></a><a href='https://www.linkedin.com/shareArticle?title=Ready%2C%20Set%2C%20Launch%3A%20Creating%20a%20Static%20Site%20With%20GitHub%20Pages&url=https%3A%2F%2Fkinsta.com%2Fblog%2Fgithub-pages%2F&mini=true' aria-label='LinkedIn' target='_blank' class='novashare-button linkedin' rel='nofollow noopener noreferrer'><span class='novashare-button-wrapper novashare-button-block'><span class='novashare-button-icon novashare-button-block'><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span></span></a></div></div></div>
+
+    </div>
+
+    <div class="container container--narrow container--noclear pb--60 user-content post-content mt--40 js-anchor-hashes" id="post-content-145802">
+        <p>With all the current hot web development tools and frameworks, creating a website is getting increasingly complicated. But sometimes, you don’t need a lot of interactivity on your site. If you’re focused on getting the info to the viewer and don’t need complex functionality, a static site might be the right choice.</p>
+<style>body a.novashare-ctt{display:block;background:#00abf0;margin:30px auto;padding:20px 20px 20px 15px;color:#fff;text-decoration:none!important;box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;border:none;border-left:5px solid #00abf0}body a.novashare-ctt:hover{color:#fff;border-left:5px solid #008cc4}body a.novashare-ctt:visited{color:#fff}body a.novashare-ctt *{pointer-events:none}body a.novashare-ctt .novashare-ctt-tweet{display:block;font-size:18px;line-height:27px;margin-bottom:10px}body a.novashare-ctt .novashare-ctt-cta-container{display:block;overflow:hidden}body a.novashare-ctt .novashare-ctt-cta{float:right}body a.novashare-ctt.novashare-ctt-cta-left .novashare-ctt-cta{float:left}body a.novashare-ctt .novashare-ctt-cta-text{font-size:16px;line-height:16px;vertical-align:middle}body a.novashare-ctt .novashare-ctt-cta-icon{margin-left:10px;display:inline-block;vertical-align:middle}body a.novashare-ctt .novashare-ctt-cta-icon svg{vertical-align:middle;height:18px}body a.novashare-ctt.novashare-ctt-simple{background:0 0;padding:10px 0 10px 20px;color:inherit}body a.novashare-ctt.novashare-ctt-simple-alt{background:#f9f9f9;padding:20px;color:#404040}body a.novashare-ctt.novashare-ctt-simple-alt:hover,body a.novashare-ctt.novashare-ctt-simple:hover{border-left:5px solid #008cc4}body a.novashare-ctt.novashare-ctt-simple .novashare-ctt-cta,body a.novashare-ctt.novashare-ctt-simple-alt .novashare-ctt-cta{color:#00abf0}body a.novashare-ctt.novashare-ctt-simple-alt:hover .novashare-ctt-cta,body a.novashare-ctt.novashare-ctt-simple:hover .novashare-ctt-cta{color:#008cc4}</style><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fkinsta.com%2Fblog%2Fgithub-pages%2F&via=kinsta&text=Don%27t+get+overwhelmed+by+all+the+complex+web+development+tools%21+Simplify+your+website+creation+with+a+static+site+%F0%9F%92%BB+Here%27s+how+%E2%AC%87%EF%B8%8F&hashtags=webdev%2Cstaticsite" class="novashare-ctt novashare-ctt-cta-left" target="_blank" rel="nofollow noopener noreferrer"><span class="novashare-ctt-tweet">Don't get overwhelmed by all the complex web development tools! Simplify your website creation with a static site 💻 Here's how ⬇️</span><span class="novashare-ctt-cta-container"><span class="novashare-ctt-cta"><span class="novashare-ctt-cta-text">Click to Tweet</span><span class="novashare-ctt-cta-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></span></span></span></a>
+<p>In this tutorial, you’ll learn what a static site is, including its perks, its limitations, and how to create and deploy a simple personal website created with HTML and Bootstrap for free using GitHub Pages.</p><aside class="in-post-container"><div class="mb--50 mt--50" data-interface="DownloadPostForm"></div></aside><div></div><kinsta-auto-toc heading="Table of Contents" exclude="last" list-style="arrow" selector="h2" count-number="-1"></kinsta-auto-toc>
+<h2>What Are GitHub Pages?</h2>
+<p><a href="http://github.com">GitHub</a> is a web-based platform for hosting Git repositories and collaborating on software projects. It offers tools for sharing and tracking code changes, managing and reviewing code, and the ability to open and review pull requests.</p>
+<p>Do not confuse <a href="https://kinsta.com/knowledgebase/git-vs-github/">Git and GitHub</a>! GitHub is a hosting service that allows collaboration between developers, whereas Git is the local version control software you use to save snapshots of the state of your software project.</p>
+<p><a href="https://pages.github.com/">GitHub Pages</a> is one of the best features of GitHub. It is a service that allows you to host a <a href="https://kinsta.com/blog/wordpress-vs-static-html/">static website </a>directly from a GitHub repository. This means you can use your repository to store your website’s code and files, and GitHub will automatically publish them as a website you can access online.</p><link rel="stylesheet" href="https://kinsta.com/wp-content/themes/kinsta/dist/components/ctas/cta-mini.css?ver=52805334ebe3cf9fe842">
+<aside class="sidebar-cta">
+        <div class="sidebar-cta__inner">
+        <div class="cta-mini">
+            <div class="cta-mini__content cta-mini__content--basic cta-mini__content--basic--perf-audit-wp">
+    <h3>Is your WordPress site slow?</h3>
+            <p>Uncover performance bottlenecks to deliver a better user experience and hit your business’s revenue goals.</p>
+        <a class="button button--green" href="https://kinsta.com/performance-audits/" data-track-ga-category="sidebar-cta" data-track-ga-label="perf-audit-wp">
+        Free Audit    </a>
+</div>
+
+        </div>
+    </div>
+</aside>
+
+<p>In summary, GitHub Pages is a quick and easy way to get your website up and running, and it’s especially useful for showcasing your <a href="https://kinsta.com/blog/portfolio-website/">portfolio</a>, open-source projects, or other static content.</p><div data-nosnippet><kinsta-advanced-cta language="en_US" type-int-post="145802" type-int-position="0"></kinsta-advanced-cta></div>
+
+<h3>Static vs Dynamic Websites</h3>
+<p>As we’ve seen, GitHub Pages provides a way to deploy <a href="https://kinsta.com/blog/wordpress-vs-static-html/">static websites</a>. But what is the difference between a static website and a dynamic website?</p>
+<p>Let’s start by discussing the content on said sites.</p>
+<p>Static content refers to the elements of the website that remain the same for all users, regardless of who they are or what actions they take on the site. This can include things like the text, images, and layout of the website, as well as the underlying code and files that make up the site. A static site is delivered to the user exactly as it’s stored.</p>
+<p>In contrast, dynamic content is content that changes based on the user’s actions — like signing in, interacting with a paywall, or commenting on a post — or other factors, such as the current time or location.</p>
+<p>For example, a website that displays a still image of a product will always show the same image to every user (static). On the other hand, a website that displays the current time will show a different time to each user based on their location (dynamic).</p>
+<p>Generally, we can say that a website is static if only contains HTML, CSS, and <a href="https://kinsta.com/javascript/">JavaScript</a> on the <a href="https://kinsta.com/blog/frontend-developer/">frontend</a>, with no server technologies like <a href="https://kinsta.com/blog/php-vs-python/">PHP or Python</a> that interact with a database.</p>
+<figure id="attachment_145872" aria-describedby="caption-attachment-145872" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145872" src="https://kinsta.com/wp-content/uploads/2023/02/Kinsta-twitter-1024x533.png" alt="Kinsta's Twitter home page shows the banner “The best cloud platform for your next web project” and multiple dynamic contents such as followers, following, and notifications." width="1024" height="533" srcset="https://kinsta.com/wp-content/uploads/2023/02/Kinsta-twitter-1024x533.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/Kinsta-twitter-300x156.png 300w, https://kinsta.com/wp-content/uploads/2023/02/Kinsta-twitter-768x400.png 768w, https://kinsta.com/wp-content/uploads/2023/02/Kinsta-twitter-1536x800.png 1536w, https://kinsta.com/wp-content/uploads/2023/02/Kinsta-twitter.png 1653w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145872" class="wp-caption-text">Twitter is a dynamic site.</figcaption></figure>
+<p>While it’s not possible to build dynamic websites using GitHub Pages, you can use easily build your own <a href="https://kinsta.com/knowledgebase/content-management-system/">using a CMS</a> such as <a href="https://kinsta.com/knowledgebase/what-is-wordpress/">WordPress</a>, or static site generators like <a href="https://kinsta.com/blog/gatsby-wordpress/">Gatsby</a> or <a href="https://kinsta.com/blog/hugo-static-site/">Hugo</a>.</p>
+<h3>GitHub Pages Key Features</h3>
+<p>Let’s see the strengths of GitHub Pages as a hosting service:</p>
+<ol>
+<li><strong>Easy setup and publishing:</strong> GitHub Pages makes it easy to get started with just a few simple steps. You can enable GitHub Pages for your repository and specify the source for your website files, and GitHub will automatically publish your website and make it available at a URL based on your username and repository name.</li>
+<li><strong>Custom domains:</strong> With GitHub Pages, you can use a custom domain name for your website instead of the default URL provided by GitHub. This allows you to use your own branding and make it easier for users to find and access your website.</li>
+<li><strong>HTTPS support:</strong> GitHub Pages offers support for HTTPS, which allows for secure connections to your website. This is crucial for building the trust of your site.</li>
+<li><strong>Jekyll support:</strong> GitHub Pages supports Jekyll, a static site generator that allows you to create sophisticated websites using templates and other features. This makes it easy to create professional-looking websites without having to write all of the code from scratch.</li>
+</ol>
+<h3>Limitations</h3>
+<p>As stated before you can only create static sites with GitHub Pages. If you want to build a complex project with many functionalities you would need other <a href="https://kinsta.com/">hosting services</a>. You should also bare in mind, that you can’t use GitHub Pages for commercial purposes, such as running an online business, or <a href="https://kinsta.com/blog/open-source-ecommerce/">ecommerce</a>.</p>
+<p>GitHub Pages doesn’t allow your site to be larger than 1 GB, meaning the files of your repository can’t surpass that amount of memory. Most of the time, 1 GB is more than enough for a static site; just be sure to <a href="https://kinsta.com/blog/lossy-compression/">compress your images</a>.</p>
+<p>It also has a soft bandwidth limit of 100 GB per month. This amount of bandwidth would be enough to distribute your website to a few thousand people per month, so unless you have a huge audience, you’ll be good to go.</p>
+<h2>Creating and Deploying With GitHub Pages: Step-by-Step Guide</h2>
+<p>Creating a GitHub Page is a simple and straightforward process to host a static site. Bare in mind that if you need some kind of database connection, you should have an external<a href="https://kinsta.com/database-hosting/"> database provider</a>.</p>
+<p>In the following guide, you’ll learn how to create a GitHub Page from scratch. That includes creating a remote repository, building a responsive personal <a href="https://kinsta.com/knowledgebase/what-is-html/">website with HTML</a>, and deploying to the web with GitHub.</p>
+<p>Let’s get into it!</p>
+<h3>1. Sign Up on GitHub</h3>
+<p>To kick things off, you must have an active GitHub account. If you don’t have one, go to <a href="https://github.com/signup">their signup page</a>. It shouldn’t take more than a couple of minutes to fill in the form.</p>
+<figure id="attachment_145873" aria-describedby="caption-attachment-145873" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="wp-image-145873 size-large" src="https://kinsta.com/wp-content/uploads/2023/02/github-singup-page-1024x497.png" alt="GitHub signup page with a label displaying “Welcome to GitHub!, Let's begin the adventure” and the “Enter your email” field." width="1024" height="497" srcset="https://kinsta.com/wp-content/uploads/2023/02/github-singup-page-1024x497.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/github-singup-page-300x146.png 300w, https://kinsta.com/wp-content/uploads/2023/02/github-singup-page-768x373.png 768w, https://kinsta.com/wp-content/uploads/2023/02/github-singup-page.png 1270w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145873" class="wp-caption-text">GitHub signup page.</figcaption></figure>
+<p>After signing in, you should be able to create a remote repository.</p>
+<h3>2. Create a Remote Repository</h3>
+<p>A repository is a directory where you store all the code related to a particular project.</p>
+<p>From the GitHub home page, click on the “New” or “Create repository” button located in the left panel of the site. This will redirect you to a form where you’ll fill in your repo’s information.</p>
+<figure id="attachment_145874" aria-describedby="caption-attachment-145874" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145874" src="https://kinsta.com/wp-content/uploads/2023/02/create-github-repository-1024x505.png" alt="GitHub home page showing a left panel with the words “Create your first project” and an arrow pointing to the button “Create repository”." width="1024" height="505" srcset="https://kinsta.com/wp-content/uploads/2023/02/create-github-repository-1024x505.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/create-github-repository-300x148.png 300w, https://kinsta.com/wp-content/uploads/2023/02/create-github-repository-768x379.png 768w, https://kinsta.com/wp-content/uploads/2023/02/create-github-repository.png 1308w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145874" class="wp-caption-text">Create a GitHub repository.</figcaption></figure>
+<p>These next steps are crucial:</p>
+<ol>
+<li>Set the name of your repository to <code>"yourusername".github.io</code>.</li>
+<li>Check the public button. You must set the repository to <strong>Public</strong> to publish your site.</li>
+<li>Add a README.</li>
+</ol>
+<p>You can only have a repository for a given personal account or organization. That’s why the repository’s name is your username and the <code>github.io</code> domain. Later, we’ll see how to set up a site from a repository.</p>
+<p>Unless you have GitHub Pro, you can only publish a GitHub page if the repository is public. Keep this in mind if you don’t want to share your site’s source code publicly.</p>
+<p>After this, you should have something like the following:</p>
+<figure id="attachment_145875" aria-describedby="caption-attachment-145875" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145875" src="https://kinsta.com/wp-content/uploads/2023/02/new-repository-1024x760.png" alt="Create a new repository form containing the Repository name with the value “kinstauser.github.io”." width="1024" height="760" srcset="https://kinsta.com/wp-content/uploads/2023/02/new-repository-1024x760.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/new-repository-300x223.png 300w, https://kinsta.com/wp-content/uploads/2023/02/new-repository-768x570.png 768w, https://kinsta.com/wp-content/uploads/2023/02/new-repository.png 1297w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145875" class="wp-caption-text">Form of GitHub repo.</figcaption></figure>
+<p>If you already have the working source code of your site, you can skip the common <a href="https://kinsta.com/blog/git-for-web-development/">Git workflow</a> and drop the files right into the repo instead.</p>
+<p>To do this, click the <code>Add file</code> menu in your repository, and select the option <strong>Upload files</strong>. Then select the files of your website, with the main HTML file named <code>index.html</code>. Remember to put all your CSS and JavaScript files in the repository as well.</p>
+<p>Finally, hit the <strong>Commit changes</strong> button.</p>
+<figure id="attachment_145876" aria-describedby="caption-attachment-145876" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145876" src="https://kinsta.com/wp-content/uploads/2023/02/upload-files-to-github-1024x615.png" alt="Uploading files main.js,index.html, and main.css to the GitHub repository, with the commit message “Add index.html, main.css, and main.js”." width="1024" height="615" srcset="https://kinsta.com/wp-content/uploads/2023/02/upload-files-to-github-1024x615.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/upload-files-to-github-300x180.png 300w, https://kinsta.com/wp-content/uploads/2023/02/upload-files-to-github-768x461.png 768w, https://kinsta.com/wp-content/uploads/2023/02/upload-files-to-github-1536x923.png 1536w, https://kinsta.com/wp-content/uploads/2023/02/upload-files-to-github.png 1576w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145876" class="wp-caption-text">Upload files to GitHub.</figcaption></figure>
+<p>In the following section, we’ll be building a simple personal website with HTML and Bootstrap. Then we’ll upload it to GitHub and set it up as a GitHub public page with a custom domain.</p>
+<h3>3. Build a Personal Site</h3>
+<p>We’ll start off by cloning the GitHub repo we just created. To do this, make sure you have the <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git client</a> already installed on your computer. (If you don’t, take a look at our tutorial on <a href="https://kinsta.com/knowledgebase/git-vs-github/#how-to-integrate-git-and-github-in-5-steps">Git and GitHub</a>.)</p>
+<aside role="note" class="wp-block-kinsta-notice is-style-info">
+            <h3>Info</h3>
+        <p>You’ll need to set up SSH authentication for your GitHub account. This can sound a bit complex, but we have a full <a href="https://kinsta.com/blog/generate-ssh-key/#using-ssh-keys-with-github">SSH Keys for GitHub</a> article that’s got you covered.</p>
+</aside>
+
+<p>Go to the <code>code</code> tab of your repository and copy the SSH URL in the <strong>SHH</strong> option.</p>
+<figure id="attachment_145877" aria-describedby="caption-attachment-145877" style="width: 612px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-full wp-image-145877" src="https://kinsta.com/wp-content/uploads/2023/02/ssh-github-connection.png" alt="Code tab of a GitHub repository with an arrow pointing to the copy SSH URL option." width="612" height="410" srcset="https://kinsta.com/wp-content/uploads/2023/02/ssh-github-connection.png 612w, https://kinsta.com/wp-content/uploads/2023/02/ssh-github-connection-300x201.png 300w" sizes="(max-width: 612px) 100vw, 612px"><figcaption id="caption-attachment-145877" class="wp-caption-text">Repo’s SSH URL.</figcaption></figure>
+<p>Then, fire up a terminal or command line. On most Linux distributions and macOS, you can use the shortcut <kbd>Ctrl + Alt + T</kbd>, or look through your system’s app menu for <strong>Terminal</strong>. On Windows, you can use the <a href="https://gitforwindows.org/">Git BASH</a> installed by default with Git, the CMD, PowerShell, or a GUI client.</p>
+<p>On your terminal, type <code>git clone</code> and the URL you copied. This will download and create a copy of the remote repository on your local machine so you can build your website.</p>
+<figure id="attachment_145878" aria-describedby="caption-attachment-145878" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145878" src="https://kinsta.com/wp-content/uploads/2023/02/terminal-kinstauser-1024x293.png" alt="Git clone command and its responses in a CMD window." width="1024" height="293" srcset="https://kinsta.com/wp-content/uploads/2023/02/terminal-kinstauser-1024x293.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/terminal-kinstauser-300x86.png 300w, https://kinsta.com/wp-content/uploads/2023/02/terminal-kinstauser-768x220.png 768w, https://kinsta.com/wp-content/uploads/2023/02/terminal-kinstauser.png 1157w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145878" class="wp-caption-text">Git clone command.</figcaption></figure>
+<p>Then enter the new folder named <strong>yourusername.github.io</strong> with <code>cd</code> and <code>ls</code>. You should see the <strong>.git</strong> folder, which contains the configuration and metadata of your project, as well as the <strong>README.md</strong> file if you created one.</p>
+<p>Open up your favorite <a href="https://kinsta.com/blog/best-text-editors/">text editor</a> (such as <a href="https://kinsta.com/blog/how-to-use-sublime-text/">Sublime Text</a>), and let’s start creating your website.</p>
+<p>At the root of the repository, create a file named <code><strong>index.html</strong></code> (this name is required by GitHub Pages) and type in the typical HTML code structure:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Kinsta User&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>As we said previously, we’re going to use <a href="https://getbootstrap.com/">Bootstrap 5.0</a>, an open-source CSS framework that helps us to build responsive websites more easily. As you’ll see, we won’t have to use custom CSS for this particular site.</p>
+<p>To get Bootstrap into our page, we’ll need to include the compiled CSS and JavaScript via a <a href="https://kinsta.com/blog/wordpress-cdn/">CDN</a>. Paste the following code inside the HTML <code>&lt;head&gt;</code> to be able to use Bootstrap CSS:</p>
+<pre><code class="language-html"><!-- CSS: Inside head tag -->&lt;link href="https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bf9f4f4efe8efe9faebdbaeb5a9b5a8">[email&#160;protected]</a>/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"&gt;</code></pre>
+<p>In this same fashion, we’ll also include the <a href="https://devicon.dev/">Devicon</a> CDN to be able to use SVG icons of popular programming languages and technologies without much trouble:</p>
+<pre><code class="language-html"><!-- Devicon: Programming languages icons -->&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e58180938c868a8ba593d7cbd4d0cbd4">[email&#160;protected]</a>/devicon.min.css"&gt;</code></pre>
+<p>Now, to include the JavaScript, insert the following code right above the end of the <code>&lt;/body&gt;</code> tag:</p>
+<pre><code class="language-html">&lt;!-- JavaScript: Above  --&gt;
+
+&lt;script src="https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5d3f3232292e292f3c2d1d68736f736e">[email&#160;protected]</a>/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+<p>We’ll kick things off by creating a header for our website. It’ll be a dark header, with links to our index page and two other pages — “Projects” and “Reading log” — which you can create later:</p>
+<pre><code class="language-html">&lt;nav class="navbar navbar-dark navbar-expand-lg bg-dark "&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="mx-4"&gt;
+            &lt;a class="navbar-brand" href="#"&gt;Kinsta User&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+            aria-label="Toggle navigation"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarTogglerDemo02"&gt;
+            &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0"&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;Projects&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;Reading Log&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+<p>We use the Bootstrap wrapper <code>navbar</code> and <code>navbar-expand-lg</code> to create a responsive container that collapses when the display width is smaller than 992px. This happens because of the grid option <code>lg</code>. If you want to know more about grid options, take a look at <a href="https://getbootstrap.com/docs/5.2/layout/grid/#grid-options">Bootstrap’s layout page</a>.</p>
+<p>Now, let’s create two responsive columns inside a container: one for a <a href="https://kinsta.com/blog/free-images-for-wordpress/#unsplash">free image</a> from <a href="https://unsplash.com/">Unsplash</a> and another for a description of ourselves:</p>
+<pre><code class="language-html">&lt;div class="container my-4 "&gt;
+    &lt;div class="row justify-content-center"&gt;
+        &lt;div class="col-lg mb-lg-4"&gt;
+            &lt;img src="image.jpg" class="img-fluid" alt="" srcset=""&gt;
+        &lt;/div&gt;
+        &lt;div class="col-lg mx-2 align-self-center"&gt;
+            &lt;div class="my-3"&gt;
+                &lt;h1 class="text-center"&gt;I'm a Kinsta User&lt;/h1&gt;
+                &lt;p&gt;As a passionate software developer, I am deeply enthusiastic about creating and
+                    developing software applications. I am constantly learning and experimenting with new
+                    technologies and approaches, and I have a strong desire to create innovative and effective
+                    solutions to complex problems. I am driven by my curiosity and love for problem-solving, and
+                    I
+                    am committed to producing high-quality, well-designed software that meets the needs of
+                    users.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>As you can see, we’re sourcing an image from a local file, so it must be in the repository when we push our changes to the GitHub repo.</p>
+<p>Finally, inside our Bootstrap container, we’ll use SVG icons from Devicon, along with a bit of internal CSS to make our skills stand out:</p>
+<pre><code class="language-html">&lt;!-- Inside the container created above --&gt;
+&lt;div class="my-4"&gt;
+    &lt;div class="text-center mb-4"&gt;
+        &lt;h1&gt;My Skills&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div class="row "&gt;
+        &lt;style&gt;
+            I {
+                font-size: 4em;
+            }
+        &lt;/style&gt;
+        &lt;!-- Skills --&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="text-center"&gt;
+                &lt;h4&gt;WordPress&lt;/h4&gt;
+                &lt;i class="devicon-wordpress-plain"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="text-center"&gt;
+                &lt;h4&gt;Django&lt;/h4&gt;
+                &lt;i class="devicon-django-plain"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="text-center"&gt;
+                &lt;h4&gt;Python&lt;/h4&gt;
+                &lt;i class="devicon-python-plain"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="text-center"&gt;
+                &lt;h4&gt;GitHub&lt;/h4&gt;
+                &lt;i class="devicon-github-original" &gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>Since we use the <code>&lt;i&gt;</code> HTML tag, we can treat it as a font. Thus we set the size of our logos to <code>4 em</code> by declaring it in the <code>style</code> tag.</p><div data-nosnippet><kinsta-advanced-cta language="en_US" type-int-post="145802" type-int-position="1"></kinsta-advanced-cta></div>
+
+<p>Here is the final result of this simple personal website:</p>
+<figure id="attachment_145879" aria-describedby="caption-attachment-145879" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145879" src="https://kinsta.com/wp-content/uploads/2023/02/Kinsta-user-website-1024x519.jpg" alt="Bootstrap page displaying a navbar with the brand “Kinsta User”, an image of a software developer, a description, and a section of skills including WordPress, Django, Python, and GitHub." width="1024" height="519" srcset="https://kinsta.com/wp-content/uploads/2023/02/Kinsta-user-website-1024x519.jpg 1024w, https://kinsta.com/wp-content/uploads/2023/02/Kinsta-user-website-300x152.jpg 300w, https://kinsta.com/wp-content/uploads/2023/02/Kinsta-user-website-768x390.jpg 768w, https://kinsta.com/wp-content/uploads/2023/02/Kinsta-user-website-1536x779.jpg 1536w, https://kinsta.com/wp-content/uploads/2023/02/Kinsta-user-website.jpg 1883w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145879" class="wp-caption-text">Personal page.</figcaption></figure>
+<p>Did you know that over <a href="https://kinsta.com/blog/responsive-web-design/#why-responsive-design-matters">50% of website traffic</a> comes from mobile devices? Because we used Bootstrap, we saved a lot of CSS coding, and also got a responsive website, as you can appreciate below.</p>
+<figure id="attachment_145880" aria-describedby="caption-attachment-145880" style="width: 897px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-full wp-image-145880" src="https://kinsta.com/wp-content/uploads/2023/02/kinsta-user-website-responsive.jpg" alt="Bootstrap page displaying a navbar with the brand “Kinsta User”, an image of a software developer, a description, and a section of skills including WordPress, Django, Python, and GitHub." width="897" height="953" srcset="https://kinsta.com/wp-content/uploads/2023/02/kinsta-user-website-responsive.jpg 897w, https://kinsta.com/wp-content/uploads/2023/02/kinsta-user-website-responsive-282x300.jpg 282w, https://kinsta.com/wp-content/uploads/2023/02/kinsta-user-website-responsive-768x816.jpg 768w" sizes="(max-width: 897px) 100vw, 897px"><figcaption id="caption-attachment-145880" class="wp-caption-text">Responsive page.</figcaption></figure>
+<p>You can customize this site as much as you want. Here’s the <a href="https://github.com/kinstauser/kinstauser.github.io">full source on GitHub</a>, at your disposal.</p>
+<p>You can even attach a headless CMS such as Ghost using one of our full-featured <a href="https://kinsta.com/application-hosting/">Application Hosting solutions</a>. You can connect directly to your GitHub repository through your <a href="https://kinsta.com/mykinsta/">MyKinsta dashboard</a> and have your new site up and running in mere minutes.</p>
+<p>It’s time to push your files. To do this, run the following commands on your terminal, at the top level of your project.</p>
+<pre><code class="language-bash">git add .
+git commit -m "Added website source code and image"
+git push</code></pre>
+<p>Now, we can use this website to set up our GitHub page.</p>
+<h3>4. Publishing a User GitHub Page</h3>
+<p>As soon as you push the <strong>index.html</strong> to the remote repository named after your username, GitHub will automatically start a workflow process to set up your site online. It may take a couple of minutes, but you’ll get your static site up and running automatically.</p>
+<p>The URL of your site will be something like the following: <code><a href="https://kinstauser.github.io/">https://kinstauser.github.io/</a></code></p>
+<p>If after 10 minutes your site is not online, you can try to make a dummy change to your code (e.g., adding a space) and push again to reactivate the GitHub Pages’ building process.</p>
+<aside role="note" class="wp-block-kinsta-notice is-style-important">
+            <h3>Important</h3>
+        <p>You can’t unpublish a user-level GitHub page. If you want to do this, you’ll have to change the repo’s name.</p>
+</aside>
+
+<h3>5. Publishing a Repository GitHub Page</h3>
+<p>Until now, we’ve created a user site, but what if we want to have multiple published GitHub sites? Then we must go with a project site.</p>
+<p>As an example, we’ll use the HTML technology site we created in the <a href="https://kinsta.com/blog/git-for-web-development/">Git for Web development</a> tutorial.</p>
+<p>The easiest way is to go to the <strong>Settings</strong> tab of our repository, then to the <strong>Pages</strong> option inside the “Code and automation” section.</p>
+<figure id="attachment_145881" aria-describedby="caption-attachment-145881" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145881" src="https://kinsta.com/wp-content/uploads/2023/02/move-to-pages-1024x490.png" alt="Repository settings page with an arrow pointing to the “Pages” option, and the message “GitHub Pages is currently disabled”." width="1024" height="490" srcset="https://kinsta.com/wp-content/uploads/2023/02/move-to-pages-1024x490.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/move-to-pages-300x144.png 300w, https://kinsta.com/wp-content/uploads/2023/02/move-to-pages-768x367.png 768w, https://kinsta.com/wp-content/uploads/2023/02/move-to-pages.png 1302w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145881" class="wp-caption-text">Repository settings.</figcaption></figure>
+<p>Select the source <strong>Deploy from a branch</strong>, and click on the branch you want to deploy the files from. It’s vastly recommended to publish from the <strong>main branch</strong>, but create features and fix bugs using auxiliary branches, and then merge them. This way you won’t introduce errors to the published site so easily.</p>
+<p>Once you’ve selected the branch, select the folder you want to serve the files from — usually the root (<code>/</code>) — and click save.</p>
+<figure id="attachment_145882" aria-describedby="caption-attachment-145882" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145882" src="https://kinsta.com/wp-content/uploads/2023/02/save-repo-settings-1024x492.png" alt="Publishing from main on GitHub." width="1024" height="492" srcset="https://kinsta.com/wp-content/uploads/2023/02/save-repo-settings-1024x492.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/save-repo-settings-300x144.png 300w, https://kinsta.com/wp-content/uploads/2023/02/save-repo-settings-768x369.png 768w, https://kinsta.com/wp-content/uploads/2023/02/save-repo-settings.png 1286w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145882" class="wp-caption-text">Publishing from main.</figcaption></figure>
+<p>Again, wait for a few minutes. Your site should be available at <code>"yourusername".github.io/</code>.</p>
+<p>To unpublish a repository site, you can go to <strong>Settings</strong>, then <strong>Pages</strong>, and click on the three dots option. You’ll see a box with the message <strong>Unpublish site</strong>.</p>
+<figure id="attachment_145883" aria-describedby="caption-attachment-145883" style="width: 1024px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-large wp-image-145883" src="https://kinsta.com/wp-content/uploads/2023/02/unpublish-site-1024x367.png" alt="Three dot button with the option “Unpublish site”." width="1024" height="367" srcset="https://kinsta.com/wp-content/uploads/2023/02/unpublish-site-1024x367.png 1024w, https://kinsta.com/wp-content/uploads/2023/02/unpublish-site-300x107.png 300w, https://kinsta.com/wp-content/uploads/2023/02/unpublish-site-768x275.png 768w, https://kinsta.com/wp-content/uploads/2023/02/unpublish-site.png 1388w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption id="caption-attachment-145883" class="wp-caption-text">Unpublishing a site.</figcaption></figure>
+<p>Great! You have the site of your open-source project up and running, but the <a href="https://kinsta.com/blog/how-to-sell-a-domain-name/">domain name itself</a> is lengthy and certainly not easy to remember. Let’s see how we can improve this.</p>
+<h3>6. Setting Up a Custom Domain</h3>
+<p>The easiest way to set up a custom domain for a GitHub page and ensure that it works is to go to your <a href="https://kinsta.com/blog/best-domain-registrar/">DNS provider</a> and create four <a href="https://kinsta.com/help/add-dns/">A records</a> for the IP addresses of GitHub Pages:</p>
+<pre><code class="language-bash">185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153</code></pre>
+<p>You must also set up a CNAME record with <code>yourusername.github.io</code> as the target. Usually, DNS changes are slow, so be patient it, could take up to a whole day.</p>
+<aside role="note" class="wp-block-kinsta-notice is-style-info">
+            <h3>Info</h3>
+        <p>If you need more information on how to create these records, please refer to your DNS provider’s guides.</p>
+</aside>
+
+<p>After doing this, go to the <strong>Custom domain</strong> section in the settings of your repo, type in your domain, click on the <strong>Save</strong> button, and wait for GitHub to check your custom domain.</p>
+<p>Also, if your DNS supports it, check the <strong>Enforce HTTPS</strong> box to only serve your site over <a href="https://kinsta.com/knowledgebase/redirect-http-to-https/">HTTPS</a>.</p>
+<figure id="attachment_145884" aria-describedby="caption-attachment-145884" style="width: 950px" class="wp-caption alignnone"><img decoding="async" loading="lazy" class="size-full wp-image-145884" src="https://kinsta.com/wp-content/uploads/2023/02/custom-domain.png" alt=" Custom domain section with a “DNS check successful” mark, and the enforce HTTPS button." width="950" height="384" srcset="https://kinsta.com/wp-content/uploads/2023/02/custom-domain.png 950w, https://kinsta.com/wp-content/uploads/2023/02/custom-domain-300x121.png 300w, https://kinsta.com/wp-content/uploads/2023/02/custom-domain-768x310.png 768w" sizes="(max-width: 950px) 100vw, 950px"><figcaption id="caption-attachment-145884" class="wp-caption-text">Custom domain.</figcaption></figure>
+<p>Congrats! If you’ve followed along up to this point of the tutorial, you have a static website hosted in GitHub Pages for free.</p>
+<h2>Best Practices for GitHub Pages</h2>
+<p>Before we part ways, here are some best practices you should take into account when publishing a GitHub site:</p>
+<ol>
+<li>Never make direct commits to the branch you’re deploying from. Create changes in other branches, then create a pull request.</li>
+<li>Select a <a href="https://kinsta.com/blog/choose-domain-name/">good domain</a> for your site if you can afford it. It’s one of the most important decisions for your personal or project brand.</li>
+<li>Don’t use GitHub Pages for commercial purposes, such as spinning up an ecommerce site.</li>
+<li>Evaluate your needs. It’s great to be able to publish a static site for free, but if you’re expecting a lot of traffic or want complex features, paying for a <a href="https://kinsta.com/seo-hosting/">great hosting service</a> is the way to go.</li>
+</ol>
+<div data-nosnippet><kinsta-advanced-cta language="en_US" type-int-post="145802" type-int-position="2"></kinsta-advanced-cta></div>
+
+<h2>Summary</h2>
+<p>Web development is getting more and more complicated every day. Static sites have been here since the advent of the internet, and they’re a great way to start creating projects.</p>
+<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fkinsta.com%2Fblog%2Fgithub-pages%2F&via=kinsta&text=Stuck+in+the+world+of+complex+website+building%3F+Step+back+and+see+if+a+static+site+is+the+right+choice+for+you.+Learn+how+to+create+one+with+this+tutorial+%F0%9F%9A%80&hashtags=webdev%2Cstaticsite" class="novashare-ctt novashare-ctt-cta-left" target="_blank" rel="nofollow noopener noreferrer"><span class="novashare-ctt-tweet">Stuck in the world of complex website building? Step back and see if a static site is the right choice for you. Learn how to create one with this tutorial 🚀</span><span class="novashare-ctt-cta-container"><span class="novashare-ctt-cta"><span class="novashare-ctt-cta-text">Click to Tweet</span><span class="novashare-ctt-cta-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></span></span></span></a>
+<p>In this tutorial, you learned what static sites are, and how to set them up online using GitHub Pages. You created a simple personal site using Bootstrap and published it as your GitHub user site. You also learned how to get a project’s site up and running and how to unpublish it if necessary.</p>
+<p>Overall, GitHub Pages is a convenient and powerful way to host your static website for free. Whether you’re looking to showcase your portfolio, share your open-source projects, or start creating an online presence, GitHub Pages is an excellent choice. And once you get enough traffic or are ready to create a <a href="https://kinsta.com/blog/what-is-a-full-stack-developer/">full-stack site</a>, you can seamlessly shift to other <a href="https://kinsta.com/application-hosting/">application hosting services</a> like Kinsta’s without missing a beat.</p>
+<aside class="user-content mt--40 pb--60">
+<hr class="mini-divider">
+<p>Get all your <a data-track-ga-category="single-post" data-track-ga-label="bottom-cta" href="https://kinsta.com/application-hosting/pricing/">applications</a>, <a data-track-ga-category="single-post" data-track-ga-label="bottom-cta" href="https://kinsta.com/database-hosting/pricing/">databases</a>, and <a data-track-ga-category="single-post" data-track-ga-label="bottom-cta" href="https://kinsta.com/wordpress-hosting/pricing/">WordPress sites</a> online and under one roof. Our feature-packed, high-performance cloud platform includes:</p>
+<ul>
+<li>Easy setup and management in the MyKinsta dashboard</li>
+<li>24/7 expert support</li>
+<li>The best Google Cloud Platform hardware and network, powered by Kubernetes for maximum scalability</li>
+<li>An enterprise-level Cloudflare integration for speed and security</li>
+<li>Global audience reach with up to 35 data centers and 275 PoPs worldwide</li>
+</ul>
+<p>Get started with a free trial of our <a data-track-ga-category="single-post" data-track-ga-label="bottom-cta" href="https://kinsta.com/application-hosting/pricing/">Application Hosting</a> or <a data-track-ga-category="single-post" data-track-ga-label="bottom-cta" href="https://kinsta.com/database-hosting/pricing/">Database Hosting</a>. Explore our <a data-track-ga-category="single-post" data-track-ga-label="bottom-cta" href="https://kinsta.com/pricing/">plans</a> or <a data-track-ga-category="single-post" data-track-ga-label="bottom-cta" href="https://kinsta.com/contact-us/">talk to sales</a> to find your best fit.</p>
+</aside>    </div>
+</article>
+    <div class="related-posts">
+        <div class="related-posts__inner container">
+            <h2 class="related-posts__title">
+                Hand-picked related articles            </h2>
+
+            <div class="posts-grid related-posts__list">
+<div class="post-preview post-114294 post type-post status-publish format-standard has-post-thumbnail hentry tag-git tag-github tag-security tag-ssh tag-web-development topic-web-development-tools wl_entity_type-article wl_entity_type-faq-page">
+    <a class="post-preview__thumbnail" aria-hidden="true" href="https://kinsta.com/blog/generate-ssh-key/">
+            <img width="360" height="180" src="https://kinsta.com/wp-content/uploads/2022/01/generate-ssh-key-360x180.jpg" class="attachment-kinsta-thumbnail size-kinsta-thumbnail wp-post-image" alt="Illustration of tiny human figures pushing a giant purple housekey toward a giant laptop." decoding="async" loading="lazy" srcset="https://kinsta.com/wp-content/uploads/2022/01/generate-ssh-key-360x180.jpg 360w, https://kinsta.com/wp-content/uploads/2022/01/generate-ssh-key-300x150.jpg 300w, https://kinsta.com/wp-content/uploads/2022/01/generate-ssh-key-1024x512.jpg 1024w, https://kinsta.com/wp-content/uploads/2022/01/generate-ssh-key-768x384.jpg 768w, https://kinsta.com/wp-content/uploads/2022/01/generate-ssh-key.jpg 1460w" sizes="(max-width: 360px) 100vw, 360px" />    </a>
+
+    <div class="post-preview__content">
+        <div class="post-preview__labels" aria-hidden="true">
+                    <span  class="post-preview__label has-purple-background-color" aria-hidden="true" href="">
+            Blog        </span>
+    </div>
+
+
+<div class="post-preview__title-excerpt">
+    <h2 class="post-preview__title">
+                <a class="post-preview__link" href="https://kinsta.com/blog/generate-ssh-key/">
+            How to Generate SSH Keys for GitHub        </a>
+    </h2>
+
+            <div class="post-preview__excerpt">
+            Now that your project is on GitHub, how do you keep it secure? Learn all you need to know about generating SSH keys for GitHub right here.        </div>
+    </div>
+<dl class="post-preview__meta">
+            <dt><span class="screen-reader-text">Reading time</span></dt>
+        <dd>11 min read</dd>
+            <dt><span class="screen-reader-text">Publish date</span></dt>
+        <dd>February 4, 2022</dd>
+            <dt><span class="screen-reader-text">Topic</span></dt>
+        <dd><a class="unslidelink" href="https://kinsta.com/topic/web-development-tools/">Web Development Tools</a></dd>
+    </dl>
+    </div>
+</div>
+
+<div class="post-preview post-105530 post type-post status-publish format-standard has-post-thumbnail hentry tag-css tag-html tag-static-site topic-headless-cms wl_entity_type-article">
+    <a class="post-preview__thumbnail" aria-hidden="true" href="https://kinsta.com/blog/static-site-generator/">
+            <img width="360" height="180" src="https://kinsta.com/wp-content/uploads/2021/10/static-site-generator-360x180.jpg" class="attachment-kinsta-thumbnail size-kinsta-thumbnail wp-post-image" alt="An illustration for static site generators showing hands typing on a laptop." decoding="async" loading="lazy" srcset="https://kinsta.com/wp-content/uploads/2021/10/static-site-generator-360x180.jpg 360w, https://kinsta.com/wp-content/uploads/2021/10/static-site-generator-300x150.jpg 300w, https://kinsta.com/wp-content/uploads/2021/10/static-site-generator-1024x512.jpg 1024w, https://kinsta.com/wp-content/uploads/2021/10/static-site-generator-768x384.jpg 768w, https://kinsta.com/wp-content/uploads/2021/10/static-site-generator.jpg 1460w" sizes="(max-width: 360px) 100vw, 360px" />    </a>
+
+    <div class="post-preview__content">
+        <div class="post-preview__labels" aria-hidden="true">
+                    <span  class="post-preview__label has-purple-background-color" aria-hidden="true" href="">
+            Blog        </span>
+    </div>
+
+
+<div class="post-preview__title-excerpt">
+    <h2 class="post-preview__title">
+                <a class="post-preview__link" href="https://kinsta.com/blog/static-site-generator/">
+            Top 5 Static Site Generators in 2023 (and When to Use Them)        </a>
+    </h2>
+
+            <div class="post-preview__excerpt">
+            If you are trying to build a static site, here are 5 static site generators to choose from along with why you should possibly choose each one.        </div>
+    </div>
+<dl class="post-preview__meta">
+            <dt><span class="screen-reader-text">Reading time</span></dt>
+        <dd>10 min read</dd>
+            <dt><span class="screen-reader-text">Publish date</span></dt>
+        <dd>November 8, 2021</dd>
+            <dt><span class="screen-reader-text">Topic</span></dt>
+        <dd><a class="unslidelink" href="https://kinsta.com/topic/headless-cms/">Headless CMS</a></dd>
+    </dl>
+    </div>
+</div>
+
+<div class="post-preview post-22323 post type-post status-publish format-standard has-post-thumbnail hentry tag-webdev tag-wordpress topic-headless-cms wl_entity_type-article">
+    <a class="post-preview__thumbnail" aria-hidden="true" href="https://kinsta.com/blog/wordpress-vs-static-html/">
+            <img width="360" height="180" src="https://kinsta.com/wp-content/uploads/2018/03/wordpress-vs-html-360x180.png" class="attachment-kinsta-thumbnail size-kinsta-thumbnail wp-post-image" alt="WordPress vs html" decoding="async" loading="lazy" srcset="https://kinsta.com/wp-content/uploads/2018/03/wordpress-vs-html-360x180.png 360w, https://kinsta.com/wp-content/uploads/2018/03/wordpress-vs-html-300x150.png 300w, https://kinsta.com/wp-content/uploads/2018/03/wordpress-vs-html-1024x512.png 1024w, https://kinsta.com/wp-content/uploads/2018/03/wordpress-vs-html-768x384.png 768w, https://kinsta.com/wp-content/uploads/2018/03/wordpress-vs-html.png 1460w" sizes="(max-width: 360px) 100vw, 360px" />    </a>
+
+    <div class="post-preview__content">
+        <div class="post-preview__labels" aria-hidden="true">
+                    <span  class="post-preview__label has-purple-background-color" aria-hidden="true" href="">
+            Blog        </span>
+    </div>
+
+
+<div class="post-preview__title-excerpt">
+    <h2 class="post-preview__title">
+                <a class="post-preview__link" href="https://kinsta.com/blog/wordpress-vs-static-html/">
+            WordPress vs Static HTML: How Should You Build Your Site?        </a>
+    </h2>
+
+            <div class="post-preview__excerpt">
+            Trying to decide between WordPress vs static HTML to build your website? In this post, we&#039;ll explain how each method works and then go over some of&hellip;        </div>
+    </div>
+<dl class="post-preview__meta">
+            <dt><span class="screen-reader-text">Reading time</span></dt>
+        <dd>14 min read</dd>
+            <dt><span class="screen-reader-text">Publish date</span></dt>
+        <dd>April 4, 2018</dd>
+            <dt><span class="screen-reader-text">Topic</span></dt>
+        <dd><a class="unslidelink" href="https://kinsta.com/topic/headless-cms/">Headless CMS</a></dd>
+    </dl>
+    </div>
+</div>
+</div>        </div>
+    </div>
+<link rel="stylesheet" href="https://kinsta.com/wp-content/themes/kinsta/dist/templates/comments.css?ver=9c113d85d4a29bed0cd3" />
+<div class="container container--narrow mt--60">
+    <div class="row">
+        <div class="pb--60 col-xs-12">
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <div class='row nocol between-xs middle-xs mb--40'>
+                        <h3 class='heading--large'>
+                            Comments                        </h3>
+
+                        <div>
+                            <a href="#commentform" class='button--ghost--gray button--small'>
+                                Leave A Comment                            </a>
+                        </div>
+                    </div>
+                    
+                    
+                    	<div id="respond" class="comment-respond">
+		<h3 class="heading--large mb--20">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/github-pages/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://kinsta.com/wp-comments-post.php" method="post" id="commentform" class="kinsta-form--whitebg kinsta-form" novalidate>  <div class="mt--10 text--small mb--40"><strong>Comment policy:</strong> We love comments and appreciate the time that readers spend to share ideas and give feedback. However, all comments are manually moderated and those deemed to be spam or solely promotional will be deleted.</div>
+        <p class="comment-form-comment"><label for="comment">Comment</label><textarea required="required" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><div class="row gutter--small mt--20"><div class="col-xs-12 col-sm-6"><p class="comment-form-author"><label for="author">Name</label> <input id="author" required="required" name="author" type="text" value="" size="30" /></p></div>
+<div class="col-xs-12 col-sm-6 mb--20"><p class="comment-form-email"><label for="email">Email</label> <input id="email" required="required" name="email" type="email" value="" size="30" /></p></div></div>
+                                <div class="form-control mt--15 terms-checkbox" data-state="neutral">
+  <div class="control-container">
+          <p class="text--normal">By submitting this form: You agree to the processing of the submitted personal data in accordance with Kinsta's <a class="unslidelink--text" target="_blank" href="https://kinsta.com/legal/privacy-policy/">Privacy Policy</a>, including the transfer of data to the United States.</p>
+              <label class="checkbox-label row nocol js-marketing-optin">
+        <span class="checkbox mr--6">
+          <input name="marketing_opt_in" type="checkbox" checked />
+          <span class="indicator"></span>
+        </span>
+                  <p class="text--normal mb--0">You also agree to receive information from Kinsta related to our services, events, and promotions. You may unsubscribe at any time by following the instructions in the communications received.</p>
+              </label>
+      </div>
+</div>
+
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='145802' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c6341b9b07" /></p><input type="hidden" id="ak_js" name="ak_js" value="5"/><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea></form>	</div><!-- #respond -->
+	                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+    <div class="site-footer__marketing">
+    <div class="container">
+        <div class="site-footer__marketing__inner">
+            <a class="featured-g2-badges flex center-xs" href="https://www.g2.com/products/kinsta" rel="noopener noreferrer sponsored" target="_blank" style="flex-wrap: wrap; gap: 2.5%; text-decoration: none;">
+            <img style="max-width: 18%; display: block;" loading="lazy" width="99" height="118" src="https://kinsta.com/wp-content/themes/kinsta/images/g2-badges/trustradius-most-loved-2023.svg?v=w2023" alt="Most Loved 2023 TrustRadius Award" />
+            <img style="max-width: 18%; display: block;" loading="lazy" width="99" height="118" src="https://kinsta.com/wp-content/themes/kinsta/images/g2-badges/trustradius-top-rated-2022.svg?v=w2023" alt="Top Rated 2022 TrustRadius Award" />
+            <img style="max-width: 18%; display: block;" loading="lazy" width="99" height="118" src="https://kinsta.com/wp-content/themes/kinsta/images/g2-badges/top-100-fastest-growing-products.svg?v=w2023" alt="Top 100 fastest growing products G2 award" />
+            <img style="max-width: 18%; display: block;" loading="lazy" width="99" height="118" src="https://kinsta.com/wp-content/themes/kinsta/images/g2-badges/leader.svg?v=w2023" alt="Leader G2 award" />
+            <img style="max-width: 18%; display: block;" loading="lazy" width="99" height="118" src="https://kinsta.com/wp-content/themes/kinsta/images/g2-badges/europe-leader.svg?v=w2023" alt="Leader Europe G2 award" />
+    </a>
+            <div class="site-footer__newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <p>Keep up with the latest web development trends, frameworks, and languages.</p>
+                <a href="#newsletter" data-dialog-src="#newsletter" class="button button--ghost">Subscribe</a>
+            </div>
+        </div>
+    </div>
+</div>
+<dialog  id="newsletter" class="dialog dialog has-dark-blue-background-color email-modal" aria-hidden="true">
+    <div class="dialog__content">
+        <h2 class="heading--large text--center color--white mb--30">
+            Sign Up For the Newsletter        </h2>
+    <kinsta-form  show-name="false" show-phone="false" show-website="false" show-company="false" show-disk-space="false" show-monthly-visits="false" show-number-of-websites="false" show-message="false" submit-button-text="Sign Up Now" submit-button-text-sending="Signing Up..." success-title="Thanks for subscribing!" success-message="Keep an eye out for our next newsletter." terms-template="newsletter" hubspot-source="subscribe_to_newsletter" submit-button-text-loading="Signing Up"></kinsta-form>
+    </div>
+</dialog>
+
+    <div class="container">
+        <nav class="site-footer__menu"><ul id="menu-footer-menu" class="menu"><li id="menu-item-95015" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-95015"><h3 >Kinsta Hosting</h3>
+<ul class="sub-menu">
+	<li id="menu-item-137354" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137354"><a href="https://kinsta.com/pricing/">Pricing</a></li>
+	<li id="menu-item-136895" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136895"><a href="https://kinsta.com/application-hosting/">Application Hosting</a></li>
+	<li id="menu-item-136782" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-136782"><a href="https://kinsta.com/database-hosting/">Database Hosting</a></li>
+	<li id="menu-item-107224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-107224"><a href="https://kinsta.com/wordpress-hosting/">WordPress Hosting</a></li>
+	<li id="menu-item-95670" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95670"><a href="https://kinsta.com/wordpress-hosting-agencies/">Agency Hosting</a></li>
+	<li id="menu-item-124120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124120"><a href="https://kinsta.com/single-site-plans/">Single Site Hosting</a></li>
+	<li id="menu-item-112328" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-112328"><a href="https://kinsta.com/woocommerce-hosting/">WooCommerce Hosting</a></li>
+	<li id="menu-item-95023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95023"><a href="https://kinsta.com/enterprise-wordpress-hosting/">Enterprise Hosting</a></li>
+	<li id="menu-item-95041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95041"><a href="https://kinsta.com/kinsta-support/">Kinsta Support</a></li>
+	<li id="menu-item-95021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95021"><a href="https://kinsta.com/wordpress-migration/">Free Migration</a></li>
+</ul>
+</li>
+<li id="menu-item-95011" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-95011"><h3 >Platform</h3>
+<ul class="sub-menu">
+	<li id="menu-item-118367" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-118367"><a href="https://kinsta.com/add-ons/">Add-Ons</a></li>
+	<li id="menu-item-95028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95028"><a href="https://kinsta.com/apm-tool/">APM Tool</a></li>
+	<li id="menu-item-95029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95029"><a href="https://kinsta.com/devkinsta/">DevKinsta</a></li>
+	<li id="menu-item-95024" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95024"><a href="https://kinsta.com/cloudflare-integration/">Cloudflare Integration</a></li>
+	<li id="menu-item-149905" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-149905"><a href="https://kinsta.com/edge-caching/">Edge Caching</a></li>
+	<li id="menu-item-95058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-95058"><a href="https://status.kinsta.com/">System Status</a></li>
+</ul>
+</li>
+<li id="menu-item-95012" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-95012"><h3 >Resources</h3>
+<ul class="sub-menu">
+	<li id="menu-item-95030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95030"><a href="https://kinsta.com/resources/">All Resources</a></li>
+	<li id="menu-item-95034" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-95034"><a href="https://kinsta.com/blog/">Blog</a></li>
+	<li id="menu-item-95031" class="menu-item menu-item-type-post_type_archive menu-item-object-knowledgebase menu-item-95031"><a href="https://kinsta.com/knowledgebase/">Knowledge Base</a></li>
+	<li id="menu-item-109761" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-109761"><a href="https://kinsta.com/docs/">Documentation &amp; Help</a></li>
+	<li id="menu-item-95033" class="menu-item menu-item-type-post_type_archive menu-item-object-feature-updates menu-item-95033"><a href="https://kinsta.com/feature-updates/">Feature Updates</a></li>
+	<li id="menu-item-124842" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124842"><a href="https://kinsta.com/academy/">Kinsta Academy</a></li>
+	<li id="menu-item-95036" class="menu-item menu-item-type-post_type_archive menu-item-object-ebook menu-item-95036"><a href="https://kinsta.com/ebooks/">Ebooks</a></li>
+	<li id="menu-item-136781" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-136781"><a href="https://kinsta.com/tools/">Development Tools</a></li>
+	<li id="menu-item-95053" class="menu-item menu-item-type-post_type_archive menu-item-object-affiliate-academy menu-item-95053"><a href="https://kinsta.com/affiliate-academy/">Affiliate Academy</a></li>
+	<li id="menu-item-102055" class="menu-item menu-item-type-post_type_archive menu-item-object-agency menu-item-102055"><a href="https://kinsta.com/agency-directory/">Agency Directory</a></li>
+</ul>
+</li>
+<li id="menu-item-95013" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-95013"><h3 >Company</h3>
+<ul class="sub-menu">
+	<li id="menu-item-95043" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95043"><a href="https://kinsta.com/about-us/">About Us</a></li>
+	<li id="menu-item-95046" class="menu-item menu-item-type-post_type_archive menu-item-object-job menu-item-95046"><a href="https://kinsta.com/careers/">Careers</a></li>
+	<li id="menu-item-95040" class="menu-item menu-item-type-post_type_archive menu-item-object-case_studies menu-item-95040"><a href="https://kinsta.com/clients/">Clients &amp; Case Studies</a></li>
+	<li id="menu-item-95049" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95049"><a href="https://kinsta.com/contact-us/">Contact Us</a></li>
+	<li id="menu-item-95042" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-95042"><a href="/kinsta-reviews/">Kinsta Reviews</a></li>
+	<li id="menu-item-95048" class="menu-item menu-item-type-post_type_archive menu-item-object-partner menu-item-95048"><a href="https://kinsta.com/partners/">Partners</a></li>
+	<li id="menu-item-95047" class="menu-item menu-item-type-post_type_archive menu-item-object-news menu-item-95047"><a href="https://kinsta.com/press/">Press</a></li>
+	<li id="menu-item-95045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95045"><a href="https://kinsta.com/why-us/">Why Us</a></li>
+	<li id="menu-item-136896" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136896"><a href="https://kinsta.com/affiliates/">Affiliate Program</a></li>
+	<li id="menu-item-95055" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-95055"><a href="https://affiliate.kinsta.com/?lang=en">Affiliate Dashboard</a></li>
+</ul>
+</li>
+<li id="menu-item-95014" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-95014"><h3 >Compare Kinsta</h3>
+<ul class="sub-menu">
+	<li id="menu-item-97403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97403"><a href="https://kinsta.com/wp-engine-alternative/">Kinsta vs WP Engine</a></li>
+	<li id="menu-item-101280" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101280"><a href="https://kinsta.com/siteground-alternative/">Kinsta vs SiteGround</a></li>
+	<li id="menu-item-97734" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97734"><a href="https://kinsta.com/flywheel-hosting-alternative/">Kinsta vs Flywheel</a></li>
+	<li id="menu-item-146320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146320"><a href="https://kinsta.com/godaddy-alternative/">Kinsta vs GoDaddy</a></li>
+	<li id="menu-item-99029" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-99029"><a href="/kinsta-alternatives/">More Comparisons</a></li>
+</ul>
+</li>
+</ul></nav>
+<div class="site-footer__company">
+    <div class='site-footer__logo'>
+        <svg  class="icon icon--logo" aria-hidden="true" focusable="false"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#logo" /></svg>    </div>
+    <nav class="site-footer__social">
+        <ul>
+                                            <li>
+                    <a  class="site-footer__social__link" href="https://github.com/kinsta/" target="_blank" rel="noopener noreferrer">
+                        <svg  class="icon icon--github" aria-hidden="true" focusable="false" title="Kinsta on GitHub"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#github" /></svg><span class="screen-reader-text">Kinsta on GitHub</span>                    </a>
+                </li>
+                                            <li>
+                    <a  class="site-footer__social__link" href="https://twitter.com/kinsta" target="_blank" rel="noopener noreferrer">
+                        <svg  class="icon icon--twitter" aria-hidden="true" focusable="false" title="Kinsta on Twitter"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#twitter" /></svg><span class="screen-reader-text">Kinsta on Twitter</span>                    </a>
+                </li>
+                                            <li>
+                    <a  class="site-footer__social__link" href="https://www.youtube.com/kinsta" target="_blank" rel="noopener noreferrer">
+                        <svg  class="icon icon--youtube" aria-hidden="true" focusable="false" title="Kinsta on YouTube"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#youtube" /></svg><span class="screen-reader-text">Kinsta on YouTube</span>                    </a>
+                </li>
+                                            <li>
+                    <a  class="site-footer__social__link" href="https://www.facebook.com/kinstahosting" target="_blank" rel="noopener noreferrer">
+                        <svg  class="icon icon--facebook" aria-hidden="true" focusable="false" title="Kinsta on Facebook"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#facebook" /></svg><span class="screen-reader-text">Kinsta on Facebook</span>                    </a>
+                </li>
+                    </ul>
+    </nav>
+           <div class="site-footer__language">
+            <label class="language-select-label"><span class="screen-reader-text">Switch language</span><svg  class="icon icon--language" aria-hidden="true" focusable="false"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#language" /></svg><select class="language-select site-footer__language__options"><option value="https://kinsta.com/dk/blog/github-pages/">Dansk</option><option value="https://kinsta.com/de/blog/github-pages/">Deutsch</option><option value="https://kinsta.com/blog/github-pages/" selected='selected'>English</option><option value="https://kinsta.com/es/blog/github-pages/">Español</option><option value="https://kinsta.com/fr/blog/pages-github/">Français</option><option value="https://kinsta.com/it/blog/github-pages/">Italiano</option><option value="https://kinsta.com/nl/blog/github-pages/">Nederlands</option><option value="https://kinsta.com/se/blog/github-pages/">Svenska</option></select><svg  class="icon icon--chevron" aria-hidden="true" focusable="false"><use xlink:href="https://kinsta.com/wp-content/themes/kinsta/dist/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#chevron" /></svg></label>        </div>
+   </div>
+
+    </div>
+
+    <div class="site-footer__legal__container">
+        <div class="container">
+            <p class="site-footer__legal">
+                <small>&copy; 2023 Kinsta Inc. All rights reserved.</small>
+                <small>Kinsta&reg; and WordPress&reg; are registered trademarks.</small>
+                <small><a href="https://kinsta.com/legal/">Legal information.</a></small>
+            </p>
+        </div>
+    </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type='text/javascript' src='https://kinsta.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://kinsta.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://kinsta.com/wp-includes/js/jquery/jquery.form.min.js?ver=4.3.0' id='jquery-form-js'></script>
+<script type='text/javascript' src='https://kinsta.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://kinsta.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://kinsta.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://kinsta.com/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='kinsta-js-main-js-extra'>
+/* <![CDATA[ */
+var kinsta = {"ajaxurl":"https:\/\/kinsta.com\/wp-admin\/admin-ajax.php","apiUrl":"https:\/\/kinsta.com\/wp-json\/","kinstanonce":"a0c0f055cf","stripe_public_key":"pk_live_r16EiSaRITiPDMKQjLeoOviT","sentry_key":null,"env":"production","chevronRight":"<svg  class=\"icon icon--chevron color--purple\" aria-hidden=\"true\" focusable=\"false\"><use xlink:href=\"https:\/\/kinsta.com\/wp-content\/themes\/kinsta\/dist\/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#chevron\" \/><\/svg>","chevronLeft":"<svg  class=\"icon icon--chevron color--purple icon--reverse\" aria-hidden=\"true\" focusable=\"false\"><use xlink:href=\"https:\/\/kinsta.com\/wp-content\/themes\/kinsta\/dist\/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#chevron\" \/><\/svg>","check_m":"<svg  class=\"icon icon--check color--purple\" aria-hidden=\"true\" focusable=\"false\"><use xlink:href=\"https:\/\/kinsta.com\/wp-content\/themes\/kinsta\/dist\/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab#check\" \/><\/svg>","translations":{"thanksForSubscribing":"Thanks for subscribing!","validationRequired":"Please fill out this field","validationEmail":"Please provide a valid email address","validationPassword":"Password must contain a min. of 6 characters, at least one lowercase and capital letter, and a number","validationDuplicate":"The two fields do not match","validationVatInvalidCountry":"The country code of your VAT number does not match your selected country","validationVatInvalidFormat":"The entered VAT number is invalid","validationVatInvalidVies":"The entered VAT number could not be verified by the EU VIES system","validationCard":"Your card details are incorrect","validationFreeEmail":"Email already in use"},"svg_sprite":"https:\/\/kinsta.com\/wp-content\/themes\/kinsta\/dist\/sprite.svg?v=2260adc4bca3c67adf39ad4283404bab","urls":{"api":"https:\/\/kinsta.com\/wp-json\/","ajax":"https:\/\/kinsta.com\/wp-admin\/admin-ajax.php","terms":"https:\/\/kinsta.com\/legal\/terms-service\/","privacy":"https:\/\/kinsta.com\/legal\/privacy-policy\/","home":"https:\/\/kinsta.com\/","theme":"https:\/\/kinsta.com\/wp-content\/themes\/kinsta","cookieSettings":"https:\/\/kinsta.com\/cookie-settings\/"},"contact_terms_html":"<div class=\"form-control mt--15 terms-checkbox\" data-state=\"neutral\">\n  <div class=\"control-container\">\n          <p class=\"text--normal\">By submitting this form: You agree to the processing of the submitted personal data in accordance with Kinsta's <a class=\"unslidelink--text\" target=\"_blank\" href=\"https:\/\/kinsta.com\/legal\/privacy-policy\/\">Privacy Policy<\/a>, including the transfer of data to the United States.<\/p>\n              <label class=\"checkbox-label row nocol js-marketing-optin\">\n        <span class=\"checkbox mr--6\">\n          <input name=\"marketing_opt_in\" type=\"checkbox\" checked \/>\n          <span class=\"indicator\"><\/span>\n        <\/span>\n                  <p class=\"text--normal mb--0\">You also agree to receive information from Kinsta related to our services, events, and promotions. You may unsubscribe at any time by following the instructions in the communications received.<\/p>\n              <\/label>\n      <\/div>\n<\/div>\n","maintenanceMode":"","timeFormat":"g:i a","dateFormat":"F j, Y","defaultPlan":"visits-business1","cookiesBar":{"isOpen":false},"globalBanner":{"text":"Deploy your app quickly and scale as you grow with our Hobby Tier","link":"https:\/\/kinsta.com\/application-hosting\/pricing\/hobby-tier\/","theme":"default","email":false,"event_label":"deploy-your-app-","success_message":"Success! Your request has been submitted. Click to learn more about Application and Database hosting at Kinsta. ","hash":"2528cd87f2575f99ffe2c15de5ebdc75","isOpen":false}};
+var kinstaVatRates = {"AT":"0.2","BE":"0.21","BG":"0.2","HR":"0.25","CY":"0.19","CZ":"0.21","DK":"0.25","EE":"0.2","FI":"0.24","FR":"0.2","DE":"0.19","GR":"0.24","HU":"0.27","IE":"0.23","IT":"0.22","LV":"0.21","LT":"0.21","LU":"0.16","MT":"0.18","NL":"0.21","PL":"0.23","PT":"0.23","RO":"0.19","SK":"0.2","SI":"0.22","ES":"0.21","SE":"0.25","GB":"0.2"};
+var kinstaFloatingContactText = {"termsHtml":"<div class=\"form-control mt--15 terms-checkbox\" data-state=\"neutral\">\n  <div class=\"control-container\">\n          <p class=\"text--normal\">By submitting this form: You agree to the processing of the submitted personal data in accordance with Kinsta's <a class=\"unslidelink--text\" target=\"_blank\" href=\"https:\/\/kinsta.com\/legal\/privacy-policy\/\">Privacy Policy<\/a>, including the transfer of data to the United States.<\/p>\n              <label class=\"checkbox-label row nocol js-marketing-optin\">\n        <span class=\"checkbox mr--6\">\n          <input name=\"marketing_opt_in\" type=\"checkbox\" checked \/>\n          <span class=\"indicator\"><\/span>\n        <\/span>\n                  <p class=\"text--normal mb--0\">You also agree to receive information from Kinsta related to our services, events, and promotions. You may unsubscribe at any time by following the instructions in the communications received.<\/p>\n              <\/label>\n      <\/div>\n<\/div>\n"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='kinsta-js-main-js-before'>
+var singularState = {"postId":145802,"postSlug":"github-pages","postType":"post","languages":["it","fr","de","nl","es","se","dk"],"currentLanguage":"en"}
+var kinstaContactFormState = {"userId":145802,"userAge":1685591748,"recentPosts":[{"title":"JavaScript Features You Need to Know to Master React","thumbnail":"https:\/\/kinsta.com\/wp-content\/uploads\/2023\/04\/javascript-and-react-01-360x180.jpg","permalink":"https:\/\/kinsta.com\/blog\/javascript-react\/"},{"title":"How To Install Laravel on Windows, macOS, and Linux","thumbnail":"https:\/\/kinsta.com\/wp-content\/uploads\/2023\/05\/install-laravel-360x180.jpg","permalink":"https:\/\/kinsta.com\/blog\/install-laravel\/"}],"nonce":"789a1950c0","isEnabled":true,"isFloatingEnabled":false,"isContactFormPage":false}
+var siteState = {"adminAjaxUrl":"https:\/\/kinsta.com\/wp-admin\/admin-ajax.php","restBaseUrl":"https:\/\/kinsta.com\/wp-json\/kinsta\/v1","restNonce":"789a1950c0","siteEnv":"production"}
+</script>
+<script type='text/javascript' src='https://kinsta.com/wp-content/themes/kinsta/dist/main.js?ver=2e67094bad69e9c15243' id='kinsta-js-main-js'></script>
+<script type='text/javascript' id='wordlift-js-extra'>
+/* <![CDATA[ */
+var wlSettings = {"ajaxUrl":"https:\/\/kinsta.com\/wp-admin\/admin-ajax.php","apiUrl":"https:\/\/kinsta.com\/wl-api\/","jsonld_url":"https:\/\/kinsta.com\/wp-json\/wordlift\/v1\/jsonld\/","postId":"145802","jsonld_enabled":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://kinsta.com/wp-content/plugins/wordlift/js/dist/bundle.js?ver=3.40.2' id='wordlift-js'></script>
+<script type='text/javascript' id='wordlift-cloud-js-extra'>
+/* <![CDATA[ */
+var _wlCloudSettings = {"selector":"a.wl-entity-page-link","url":"https:\/\/kinsta.com\/wp-json\/wordlift\/v1\/jsonld"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://kinsta.com/wp-content/plugins/wordlift/js/dist/wordlift-cloud.js?ver=3.40.2' id='wordlift-cloud-js'></script>
+<script type='text/javascript' src='https://kinsta.com/wp-content/plugins/novashare/inc/../js/novashare.min.js?ver=1.2.1' id='novashare-js-js'></script>
+<script defer type='text/javascript' src='https://kinsta.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1.12' id='akismet-form-js'></script>
+</body>
+</html>

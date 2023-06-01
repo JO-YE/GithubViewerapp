@@ -7,10 +7,10 @@ export function populateGithubUsers(users) {
     .map((user) => {
       return `
         <ul>
-          <li>
+          <li style="list-style: circle; margin-bottom: 10px;">
             <img src="${user.avatar_url}" alt="${user.login}">
             <h3>${user.login}</h3>
-            <a href="https://github.com/${user.login}" target="_blank"> More about</a>
+            <a href="https://github.com/${user.login}" target="_blank"> View Profile</a>
          </li>
        </ul>
       `;
@@ -28,6 +28,7 @@ export const displayUserInfo = (user) => {
           <p>${user.bio}</p>
           <p>Followers: ${user.followers}</p>
           <p>Following: ${user.following}</p>
+          <a href="https://github.com/${user.login}" target="_blank"> View Profile</a>
         </div>
        `;
   userInfoContainer.innerHTML = userInfo;
@@ -42,6 +43,7 @@ export function displayRepositories(repositories) {
           <p>${repo.description}</p>
           <p>Stars: ${repo.stargazers_count}</p>
           <p>Forks: ${repo.forks_count}</p>
+          <a href="${repo.html_url}" target="_blank"> View Repository</a>
         </div>
       `;
     })

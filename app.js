@@ -1,10 +1,5 @@
-import { fetchUser, fetchUsers } from "./User.js";
-import { fetchRepositories } from "./Repo.js";
-import {
-  displayRepositories,
-  populateGithubUsers,
-  displayUserInfo,
-} from "./Userinfo.js";
+import { fetchUsers } from "./User.js";
+import { populateGithubUsers } from "./Userinfo.js";
 
 const form = document.getElementById("github-form");
 
@@ -42,14 +37,17 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
-  try {
-    const user = await fetchUser(username);
-    const repositories = await fetchRepositories(username);
+  window.location.href =
+    "response.html?username=" + encodeURIComponent(username);
+});
 
-    displayUserInfo(user);
-    displayRepositories(repositories);
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Error fetching User information and Repositories.");
-  }
+const backToTopLink = document.querySelector(".back-to-top-link");
+
+backToTopLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+  location.reload();
 });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitHubViewerApp</title>
-    <link rel="icon" href="gicon.jpg" />
+    <link rel="icon" href="./images/gicon.jpg" />
     <link rel="stylesheet" href="github_styles.css" />
 
     <script src="app.js" defer type="module"></script>
@@ -17,7 +17,7 @@
     <main>
       <div class="container">
         <h2>Enter GitHub Username</h2>
-        <form id="github-form">
+        <form id="github-form" action="response.html" method="POST">
           <input
             type="text"
             id="username-input"
@@ -28,18 +28,8 @@
       </div>
 
       <div class="github-users"></div>
-
-      <div class="container">
-        <h2>User Information</h2>
-        <div id="user-info"></div>
-      </div>
-
-      <div class="container">
-        <h2>Repositories</h2>
-        <div id="repositories"></div>
-      </div>
     </main>
 
-    <!--<script src="app.js" type="module"></script> -->
+    <a href="#" class="back-to-top-link">Back to Top</a>
   </body>
 </html>
