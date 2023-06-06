@@ -20,6 +20,7 @@ header {
   margin-bottom: 20px;
   padding: 20px;
   border: 1px solid #ccc;
+  width: 100%;
 }
 
 .container h2 {
