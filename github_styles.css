@@ -112,4 +112,17 @@ button:hover {
     top: 80px;
     margin-top: 20px;
   }
+
+  /* Make the elements cover the full width */
+  #github-form {
+    flex-direction: column;
+  }
+
+  #username-input {
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
 }
