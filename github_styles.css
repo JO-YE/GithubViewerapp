@@ -99,4 +99,17 @@ button:hover {
   .container {
     padding: 10px;
   }
+
+  #username-input {
+    padding: 2px;
+  }
+
+  button[type="submit"] {
+    padding: 2px 6px;
+  }
+
+  .go-back {
+    top: 80px;
+    margin-top: 20px;
+  }
 }
