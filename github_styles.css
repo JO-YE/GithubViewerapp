@@ -88,3 +88,14 @@ button:hover {
 .back-to-top-link:hover {
   opacity: 0.8;
 }
+
+/* Styles for mobile devices with a maximum width of 767px */
+@media only screen and (max-width: 767px) {
+  header {
+    padding: 10px;
+    background-size: 50px;
+  }
+
+  .container {
+    padding: 10px;
+  }
