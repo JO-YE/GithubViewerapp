@@ -26,6 +26,7 @@ export const fetchUsers = async () => {
   }
 };
 
+// Using "async" and "await" with "fetch" allows you to write more readable and sequential code
 export const fetchUser = async (_username) => {
   try {
     const response = await fetch(`${API}/${_username}`);

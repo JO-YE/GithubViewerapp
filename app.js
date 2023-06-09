@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  // TODO: remove scroll event listener
-
   window.removeEventListener("scroll", () => {});
 
   const username = document.getElementById("username-input").value.trim();
