@@ -38,16 +38,21 @@ header {
 }
 
 button[type="submit"] {
-  padding: 5px 10px;
-  background-color: #333;
   color: #fff;
   border: none;
   cursor: pointer;
   opacity: 1;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #313233;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 button:hover {
   /*the mouse hovering over it. */
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .user-info {
@@ -198,14 +203,18 @@ button:hover {
 
 .user-box a {
   text-decoration: none;
-  color: #c7bebe;
-  background-color: #444444;
-  padding: 0px 0px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #313233;
+  color: #fff;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .user-box a:hover {
-  background-color: #0c0c0c;
+  background-color: #272e53;
 }
 
 /* Styles for mobile devices with a maximum width of 767px */
