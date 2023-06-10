@@ -50,6 +50,51 @@ button:hover {
   opacity: 0.9;
 }
 
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.user-info p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.user-info a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #313233;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.user-info a:hover {
+  background-color: #0056b3;
+}
+
 #user-info,
 #repositories {
   display: grid;
@@ -59,34 +104,68 @@ button:hover {
 }
 
 .repository {
-  border: 1px solid #ad9b9b;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 10px;
+  margin-bottom: 20px;
 }
 
-.go-back {
+.repository h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.repository p {
+  margin-bottom: 5px;
+}
+
+.repository a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #313233;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.repository a:hover {
+  background-color: #0056b3;
+}
+
+.back-home a {
+  text-decoration: none;
+  padding: 0px 0px;
   position: absolute;
   top: 100px;
   right: 10px;
-  margin-top: 40px;
-  background-color: #312e2e;
-  opacity: 1;
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: #313233;
   color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.go-back:hover {
+.back-home a:hover {
   opacity: 0.8;
+  background-color: #325a85;
 }
 
-.back-to-top-link {
+.back-to-top-link a {
   position: fixed;
   bottom: 0px;
   right: 10px;
   margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #313233;
   color: #fff;
-  background-color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.back-to-top-link:hover {
+.back-to-top-link a:hover {
   opacity: 0.8;
 }
 

@@ -19,14 +19,15 @@ export function populateGithubUsers(users) {
 
 export const displayUserInfo = (user) => {
   const userInfo = `
-				<div>
+				<div class="user-info">
 				  <img src="${user.avatar_url}" alt="${user.login}">
 				  <!-- the alt attribute is used with the img tag as an alternative text for an image -->
 				  <h3>${user.name}</h3>
           <p>${user.bio}</p>
           <p>Followers: ${user.followers}</p>
           <p>Following: ${user.following}</p>
-          <a href="https://github.com/${user.login}" target="_blank"> View Profile</a>
+          <a href="${user.html_url}" target="_blank"> View Profile</a>
+          <a href="http://${user.blog}" target="_blank"> Get in touch</a>
         </div>
        `;
   userInfoContainer.innerHTML = userInfo;
