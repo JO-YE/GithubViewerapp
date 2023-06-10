@@ -1,6 +1,6 @@
 const API = "https://api.github.com/users";
 let page = 1; // Assuming page and perPage variables are defined elsewhere
-let perPage = 20;
+let perPage = 1000;
 let users = [];
 
 export const fetchUsers = async () => {

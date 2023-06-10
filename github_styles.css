@@ -90,6 +90,45 @@ button:hover {
   opacity: 0.8;
 }
 
+.github-users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-box {
+  flex: 0 0 calc(16.66% - 20px);
+  background-color: #eaeaea;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.user-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.user-box h3 {
+  margin: 0;
+}
+
+.user-box a {
+  text-decoration: none;
+  color: #c7bebe;
+  background-color: #444444;
+  padding: 0px 0px;
+  transition: background-color 0.3s ease;
+}
+
+.user-box a:hover {
+  background-color: #0c0c0c;
+}
+
 /* Styles for mobile devices with a maximum width of 767px */
 @media only screen and (max-width: 767px) {
   header {

@@ -6,13 +6,11 @@ export function populateGithubUsers(users) {
   const usersHtml = users
     .map((user) => {
       return `
-        <ul>
-          <li style="list-style: circle; margin-bottom: 10px;">
+        <div class="user-box">
             <img src="${user.avatar_url}" alt="${user.login}">
             <h3>${user.login}</h3>
             <a href="https://github.com/${user.login}" target="_blank"> View Profile</a>
-         </li>
-       </ul>
+       </div>
       `;
     })
     .join("");
