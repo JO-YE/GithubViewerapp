@@ -27,7 +27,7 @@ export const displayUserInfo = (user) => {
           <p>Followers: ${user.followers}</p>
           <p>Following: ${user.following}</p>
           <a href="${user.html_url}" target="_blank"> View Profile</a>
-          <a href="http://${user.blog}" target="_blank"> Get in touch</a>
+          <a href="${user.blog}" target="_blank"> Get in touch</a>
         </div>
        `;
   userInfoContainer.innerHTML = userInfo;
